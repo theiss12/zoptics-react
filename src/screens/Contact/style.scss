@@ -1,3 +1,62 @@
 .screen-contact {
-    
+    padding: 64px 0 0;
+
+    .container {
+        display: flex;
+        background-color: var(--darkColor);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+
+        > * {
+            flex-grow: 1;
+            width: 50%;
+        }
+    }
+
+    .contact {
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 90px;
+            position: relative;
+            z-index: 1;
+            background-color: var(--darkColor);
+            transition: all .5s;
+            
+            &:hover {
+                width: 100%;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+            }
+        }
+
+        &__headline {
+            // margin: 0 0 64px;
+            margin: 0;
+            text-decoration: underline;
+            text-align: center;
+            font-size: 52px;
+            color: gold;
+        }
+
+        &__details {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 16px;
+            font-size: 30px;
+            color: white;
+            width: fit-content;
+
+            &-label {
+                text-align: right;
+                margin: 0 0 12px;
+                font-weight: bold;
+            }
+
+            &-info {
+                margin: 0 0 12px;
+                color: white;
+            }
+        }
+    }
 }
