@@ -11,6 +11,7 @@ import Blog from './screens/Blog';
 import Article from './screens/Article';
 import Cart from './screens/Cart';
 import Game from './screens/Game';
+import Contact from './screens/Contact';
 import DefaultLayout from './layouts/DefaultLayout';
 
 import { setSessionProducts } from './services/session';
@@ -48,7 +49,7 @@ function App() {
               <Route path="products" element={ <Products /> }></Route>
               <Route path="blog" element={ <Blog articles={articles} /> }></Route>
               <Route path="blog/:slug" element={ <Article articles={articles} /> }></Route>
-              <Route path="contact" element={ <p>Contact</p> }></Route>
+              <Route path="contact" element={ <Contact /> }></Route>
               <Route path="terms" element={ <p>Terms</p> }></Route>
               <Route path="cart" element={ <Cart /> }></Route>
               <Route path="game" element={ <Game /> }></Route>
