@@ -1,0 +1,25 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "imageUrl": "/img/telephone.png",
+            "headline": "Tanácsadás",
+            "description": "Lorem ipsum...",
+            "link": "/services/tanacsadas"
+        },
+        {
+            "id": 2,
+            "imageUrl": "/img/briefcase.png",
+            "headline": "Értékesítés",
+            "description": "Lorem ipsum...",
+            "link": "/services/ertekesites"
+        },
+        {
+            "id": 3,
+            "imageUrl": "/img/suite.png",
+            "headline": "Karrier",
+            "description": "Lorem ipsum...",
+            "link": "/services/karrier"
+        }
+    ]
+}

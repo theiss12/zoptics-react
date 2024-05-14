@@ -1,0 +1,28 @@
+.component-pagination {
+    margin: 0 0 32px;
+    width: 33%;
+    text-align: center;
+    &__button {
+        // color: transparent;
+        background-color: transparent;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border: none;
+        border-bottom: 3px solid gold;
+        transition: all .25s;
+        margin: 10px;
+        color: gold;
+        font-weight: bold;
+
+        // &:hover {
+            
+        // }
+
+        &:active,
+        &.active {
+            transform: scale(1.3);
+        }
+    }
+}

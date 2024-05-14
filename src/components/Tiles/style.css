@@ -1,0 +1,51 @@
+.component-tiles {
+    padding: 80px 0;
+    background-color: var(--darkColor);
+}
+
+.component-tiles .title {
+    text-align: center;
+    font-size: 36px;
+    text-transform: uppercase;
+    margin: 0 0 80px;
+    color: white;
+}
+
+.component-tiles .row {
+    display: flex;
+    margin: 0 0 32px;
+}
+
+.component-tiles .tile {
+    width: 20%;
+    height: 200px;
+    margin: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: linear all .15s;
+    background-size: cover;
+    background-position: center;
+}
+
+.component-tiles .tile:hover {
+    transform: scale(1.05);
+    box-shadow: 1px 1px 24px rgba(255,255,255,0.5);
+}
+
+.component-tiles .tile--big {
+    width: 40%;
+}
+
+.component-tiles .tile button {
+    transition: all ease-in .25s;
+    opacity: 0;
+}
+
+.component-tiles .tile:hover button {
+    opacity: 1;
+}
+
+/* .component-tiles .tile button:hover {
+    opacity: 1;
+} */

@@ -1,0 +1,52 @@
+:root {
+  --darkColor: rgb(34, 77, 86);
+  --accentColor: rgb(118, 217, 171);
+}
+
+.container {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button {
+  background: var(--accentColor);
+  border: var(--accentColor) thin solid;
+  padding: 12px 32px;
+  border-radius: 100px;
+  transition: all .15s;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.button:hover {
+  background-color: black;
+  border-color: black;
+  color: white;
+}
+
+.button:active {
+  background-color: white;
+  border-color: black;
+  color: black;
+} 
+
+.discount-ribbon {
+  background-color: gold;
+  color: white;
+  font-weight: bold;
+  font-size: 150%;
+
+  min-height: 50px;
+  min-width: 200px;
+
+  position: absolute;
+  top: -10px;
+  left: -50px;
+
+  line-height: 50px;
+  transform: rotate(-45deg);
+  text-align: center;
+}

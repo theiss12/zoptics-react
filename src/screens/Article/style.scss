@@ -1,0 +1,116 @@
+.fetch-error {
+    width: max-content;
+    margin: 25vh auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    color: lightcoral;
+    border-left: 5px solid lightcoral;
+    
+    &__title {
+        font-size: 36px;
+    }
+
+    &__information {
+        font-size: 24px;
+    }
+}
+
+.screen-article {
+    .article {
+        background-color: var(--darkColor);
+        padding: 0 0 64px;
+        color: white;
+    
+        &__cover {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0 0 90px;
+            padding: 40px 40px 128px 40px;
+            min-height: 325px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+
+            .container {
+                width: 100%;
+            }
+        }
+    
+        &__headline {
+            text-align: left;
+            margin: 0;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            font-size: 64px;
+        }
+    
+        &__abstract {
+            text-indent: 64px;
+            text-align: center;
+            font-size: 32px;
+            margin: 0 0 64px;
+    
+            &::before,
+            &::after {
+                content: '-';
+            }
+        }
+    
+        &__content {
+            font-size: 24px;
+
+            p {
+                text-indent: 48px;
+                
+                &::first-letter {
+                    font-style: italic;
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }
+    
+    .suggestions {
+        margin: 0 0 100px;
+        padding: 64px 0 0;
+    
+        &__title {
+            margin: 0 0 48px;
+            font-size: 32px;
+        }
+    
+        .suggestion-items {
+            display: flex;
+            justify-content: space-between;
+            
+            .suggestion-item {
+                background-color: var(--darkColor);
+                color: white;
+                text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                width: 410px;
+                height: 410px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                cursor: pointer;
+                transition: all .25s;
+    
+                &__headline {
+                    margin: 0;
+                    padding: 20px;
+                }
+    
+                &__image {
+                    height: 75%;
+                    object-fit: cover;
+                }
+    
+                &:hover {
+                    scale: 1.15;
+                }
+            }
+        }
+    }
+}

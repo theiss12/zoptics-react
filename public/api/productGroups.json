@@ -1,0 +1,36 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Aktuális",
+            "productIds": [
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Legnépszerűbb",
+            "productIds": [
+                5,
+                4,
+                3,
+                2,
+                1
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Olvasó",
+            "productIds": [
+                6, 
+                7, 
+                8, 
+                9, 
+                10
+            ]
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+.component-button {
+    // margin: 100px 100px; // to be deleted
+    background: var(--accentColor);
+    border: none;
+    padding: 12px 32px;
+    color: transparent;
+    border-radius: 400px;
+    transition: all .25s;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    // height: min-content;
+
+    &::after {
+        content: attr(data-value);
+        padding: 12px 32px;
+        position: absolute;
+        inset: 0;
+        color: black;
+        // background-color: rgba(255, 255, 255, 0);
+        // backdrop-filter: blur(0px);
+        border-radius: 400px;
+        transition: all .25s;
+    }
+
+    &:hover,
+    &:focus-visible {
+        scale: 0.8;
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+        background-color: rgba(255, 255, 255, 0);
+        backdrop-filter: blur(5px);
+        // position: absolute;
+        scale: 1.7;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+}

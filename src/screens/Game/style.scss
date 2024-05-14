@@ -1,0 +1,195 @@
+.screen-game {
+    translate: 0px -80px;
+    padding: 80px 0;
+    min-height: calc(100vh - 143px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--darkColor);
+
+    .game {
+
+        &__title {
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            font-size: 64px;
+            margin: 20px 0;
+        }
+    
+        &__headline {
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            font-size: 32px;
+            margin: 40px 0;
+        }
+
+        // &__area {
+
+        // }
+
+        &__row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+
+            .clue {
+                position: relative;
+                &__button {
+                    font-size: 2em;
+                    font-weight: bold;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    border-radius: 1000px;
+                    border: none;
+                    color: gold;
+                    animation-name: glowing-text;
+                    animation-iteration-count: infinite;
+                    animation-duration: 1s;
+                    user-select: none;
+                    cursor: pointer;
+
+                    @keyframes glowing-text {
+                        0% {
+                            text-shadow: 0 0 20px transparent;
+                            scale: 1;
+                        }
+                        50% {
+                            text-shadow: 0 0 20px gold;
+                            scale: 1.2;
+                        }
+                        100% {
+                            text-shadow: 0 0 20px transparent;
+                            scale: 1;
+                        }
+                    }
+
+                    &:active + .clue__content {
+                        opacity: 1;
+                    }
+                }
+
+                &__content {
+                    position: absolute;
+                    left: -300px;
+                    opacity: 0;
+                    width: 300px;
+                    font-weight: bold;
+                    transition: all .25s;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    padding: 10px;
+                    border-radius: 10px;
+                    z-index: 1;
+                }
+            }
+        }
+
+        &__element {
+            width: 100px;
+            height: 100px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            box-shadow: 0 0 50px white;
+            transition: all .25s;
+            margin: 0 20px;
+
+            &:hover {
+                scale: 1.1;
+                box-shadow: 0 0 100px red;
+                rotate: -45deg;
+            }
+
+            &:active {
+                rotate: -360deg;
+            }
+        }
+    }
+
+    .won-wrapper {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        margin: auto;
+        background-size: cover;
+        background-position: center;
+        animation-name: orbit;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+
+        @keyframes orbit {
+            0% {
+                scale: 0.5;
+                translate: 0% 0%;
+                rotate: 0deg;
+            }
+            20% {
+                scale: 1;
+                translate: -100% 0%;
+                rotate: -90deg;
+            }
+            40% {
+                scale: 2;
+                translate: 0% 0%;
+                rotate: -180deg;
+            }
+            60% {
+                scale: 1;
+                translate: 100% 0%;
+                rotate: -270deg;
+            }
+            80% {
+                scale: 0.5;
+                translate: 0% 0%;
+                rotate: -360deg;
+            }
+            100% {
+                scale: 1;
+                translate: 0% 0%;
+                rotate: -360deg;
+            }
+        }
+
+    }
+
+    .won-title {
+        color: white;
+        text-align: center;
+        font-size: 48px;
+        position: absolute;
+        opacity: 0;
+        scale: 0;
+        z-index: 1;
+
+        animation-name: fade-in-won;
+        animation-fill-mode: forwards;
+        animation-delay: 3s;
+        animation-duration: 1s;
+
+        @keyframes fade-in-won {
+            from {
+                opacity: 0;
+                scale: 0;
+            }
+            to {
+                opacity: 1;
+                scale: 1;
+            }
+        }
+    }
+
+
+
+    &.won {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

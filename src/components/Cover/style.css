@@ -1,0 +1,183 @@
+.component-cover {
+    position: relative;
+    /* clip-path: circle(50% at 0% 0%); */
+    background-color: var(--darkColor);
+}
+
+.component-cover .slides {
+    height: 90vh;
+    position: relative;
+    clip-path: circle(50%);
+    transition: all 1s ease;
+    overflow: hidden;
+}
+
+.component-cover:hover .slides {
+    clip-path: circle(100%);
+}
+
+.component-cover .slide {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.component-cover .slide.active {
+    opacity: 1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.component-cover .slide.active.left {
+    animation-name: slideFadeInLeft;
+}
+
+@keyframes slideFadeInLeft {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 0px;
+    }
+}
+
+.component-cover .slide.active.right {
+    animation-name: slideFadeInRight;
+}
+
+@keyframes slideFadeInRight {
+    0% {
+        right: 100%;
+    }
+    100% {
+        right: 0px;
+    }
+}
+
+.component-cover .slide.active.up {
+    animation-name: slideFadeInUp;
+}
+
+@keyframes slideFadeInUp {
+    0% {
+        top: 100%;
+        /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); */
+    }
+    100% {
+        top: 0px;
+        /* clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%); */
+    }
+}
+
+.component-cover .slide .title {
+    margin: 0 0 24px;
+    font-size: 100px;
+    color: white;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+    position: relative;
+}
+
+.component-cover .slide .headline {
+    font-size: 50px;
+    color: white;
+    padding: 0 200px;
+    position: relative;
+}
+
+.component-cover .slide.active .title,
+.component-cover .slide.active .headline {
+    animation-name: textFadeIn;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes textFadeIn {
+    0% {
+        top: 50%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        top: 0px;
+        opacity: 1;
+    }
+}
+
+.component-cover .slide-navigation-button {
+    position: absolute;
+    top: calc(50% - 20px);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 75px;
+    height: 75px;
+    border: none;
+    font-weight: bold;
+    transition: 0.10s;
+    padding: 0px;
+}
+
+.component-cover .slide-navigation-button:hover {
+    transform: scale(1.3);
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.component-cover .slide-navigation-button:active {
+    background-color: white;
+}
+
+.component-cover .slide-navigation-button.previous {
+    left: 75px;
+}
+
+.component-cover .slide-navigation-button.next {
+    right: 75px;
+}
+
+.component-cover .slide-navigation-button .arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.component-cover .slide-navigation-pagination {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    padding: 0px;
+    transform: translate(-50%, 0%);
+}
+.component-cover .slide-navigation-pagination li button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: 0.20s;
+    cursor: pointer;
+    /* box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); */
+}
+
+.component-cover .slide-navigation-pagination li button:hover {
+    background-color: white
+}
+
+.component-cover .slide-navigation-pagination li button.active {
+    background-color: white;
+    transform: scale(1.2);
+}

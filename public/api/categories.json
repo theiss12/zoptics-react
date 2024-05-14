@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "label": "Gyerek"
+        },
+        {
+            "id": 2,
+            "label": "Napszemüveg"
+        },
+        {
+            "id": 3,
+            "label": "Luxus"
+        },
+        {
+            "id": 4,
+            "label": "Futurisztikus"
+        },
+        {
+            "id": 5,
+            "label": "Olvasó"
+        }
+    ]
+}

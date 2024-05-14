@@ -1,0 +1,162 @@
+.component-navigation {
+    text-align: left;
+    background-color: var(--accentColor);
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+    transition: all .25s;
+
+    &.game {
+        background: transparent;
+        backdrop-filter: blur(10px);
+        color: white;
+        
+    }
+}
+
+.component-navigation-menu {
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+}
+
+.component-navigation-menu > li {
+    padding: 15px 20px;
+    border-bottom: var(--accentColor) medium solid;
+    transition: all .25s;
+}
+
+.component-navigation-menu > li.active {
+    font-weight: bold;
+    border-bottom: black medium solid;
+    color: grey;
+}
+
+.component-navigation-menu > li.cart {
+    margin-left: auto;
+    position: relative;
+    z-index: 200;
+}
+
+.component-navigation-menu > li.cart img {
+    max-height: 25px;
+}
+
+.component-navigation-menu > li:hover {
+    border-bottom: grey medium solid;
+}
+
+.component-navigation-menu > li:hover a {
+    color: grey;
+}
+
+.component-navigation-menu > li a {
+    text-decoration: none;
+    color: black;
+    font-size: 125%;
+}
+
+.component-navigation-menu .dropdown {
+    border: none;
+    position: absolute;
+    top: 60px;
+    right: 40px;
+    width: 400px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    display: none;
+    opacity: 0.4;
+    transition: 0.25s;
+}
+
+.component-navigation-menu li.empty-cart-message {
+    justify-content: center;
+    border-left: none;
+    font-weight: bold;
+    color: lightcoral;
+    animation-name: pulsate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    .empty-cart-message__information {
+        padding: 0;
+        margin: 0px;
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.component-navigation-menu li.cart:hover .dropdown {
+/*, .component-navigation-menu .dropdown:hover { */
+    display: block;
+}
+
+.component-navigation-menu .dropdown:hover {
+    opacity: 1;
+}
+
+.component-navigation-menu .dropdown-cart-items {
+    list-style-type: none;
+    padding: 0 12px;
+}
+
+.component-navigation-menu .dropdown-cart-items li {
+    display: flex;
+    margin: 20px 0px 20px 0px;
+    border-bottom: lightgray thin solid;
+    padding-bottom: 24px;
+}
+
+.component-navigation-menu .dropdown-cart-items li:last-child {
+    border-bottom: none;
+    padding-bottom: 0px;
+}
+
+.component-navigation-menu .dropdown-cart-items span {
+    display: inline-flex;
+}
+
+.component-navigation-menu .dropdown-cart-items .cart-item-media {
+    width: 5%;
+    justify-content: center;
+    padding: 0 4px;
+}
+
+.component-navigation-menu .dropdown-cart-items .cart-item-media img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.component-navigation-menu .dropdown-cart-items .cart-item-name {
+    width: 50%;
+    justify-content: start;
+    text-align: left;
+    padding: 0 4px;
+}
+
+.component-navigation-menu .dropdown-cart-items .cart-item-quantity {
+    width: 15%;
+    justify-content: center;
+    font-weight: bold;
+    padding: 0 4px;
+}
+
+.component-navigation-menu .dropdown-cart-items .cart-item-cost {
+    width: 30%;
+    justify-content: end;
+    padding: 0 4px;
+}

@@ -1,0 +1,55 @@
+              const [paginationValue, setPaginationValue] = useState(0);
+    const [paginationSize, setPaginationStep] = useState(4);
+          
+          filteredProducts.slice(paginationValue, paginationValue + paginationSize).map(product => //.....
+          
+                    <div className="products-search__pagination">
+                        {
+                            [...new Array(Math.ceil(filteredProducts.length / paginationSize))].map((paginator, index) => 
+                                <input
+                                    key={index}
+                                    type="button"
+                                    className={
+                                        `product-search__pagination-button ${
+                                            index + 1 === Math.ceil(paginationValue / paginationSize) + 1 ? 
+                                            "active" : ""
+                                        }`
+                                    }
+                                    value={index + 1}
+                                    onClick={(event) => {
+                                        const newPaginationValue = (parseInt(event.target.value) - 1) * paginationSize;
+                                        setPaginationValue(newPaginationValue);
+                                    }}
+                                />
+                            )
+                        }
+                    </div>
+
+                            &__pagination {
+            margin: 0 0 32px;
+            width: 33%;
+            text-align: center;
+            .product-search__pagination-button {
+                // color: transparent;
+                background-color: transparent;
+                cursor: pointer;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                border: none;
+                border-bottom: 3px solid gold;
+                transition: all .25s;
+                margin: 10px;
+                color: gold;
+                font-weight: bold;
+
+                // &:hover {
+                    
+                // }
+
+                &:active,
+                &.active {
+                    transform: scale(1.3);
+                }
+            }
+        }

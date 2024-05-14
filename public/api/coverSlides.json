@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "title": "Spring",
+            "headline": "The season of hope and rebirth.",
+            "imageUrl": "/img/summer-field.png"
+        },
+        {
+            "id": 2,
+            "title": "Summer",
+            "headline": "The hottest season of the year.",
+            "imageUrl": "/img/beach.png"
+        },
+        {
+            "id": 3,
+            "title": "Autumn",
+            "headline": "Well... at least the leafs are nice and colorful.",
+            "imageUrl": "/img/autumn-forest.png"
+        },
+        {
+            "id": 4,
+            "title": "Winter",
+            "headline": "Also the shortest season of the year (:",
+            "imageUrl": "/img/snowy-vista.png"
+        }
+    ]
+}

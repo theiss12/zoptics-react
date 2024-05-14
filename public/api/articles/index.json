@@ -1,0 +1,53 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "headline": "Új szemüveg született", 
+            "abstract": "TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT ", 
+            "imageUrl": "article1.jpg",
+            "slug": "uj-szemuveg-szuletett"
+        },
+        {
+            "id": 2,
+            "headline": "Új őrlület!! Kutyaszemüveg!", 
+            "abstract": "TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT ", 
+            "imageUrl": "article2.jpg",
+            "slug": "uj-orulet-kutyaszemuveg"
+        },
+        {
+            "id": 3,
+            "headline": "Nem fogod elhinni, mit látsz ebben a szemüvegben", 
+            "abstract": "TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT ", 
+            "imageUrl": "article3.jpg",
+            "slug": "nem-fogod-elhinni-mit-latsz-ebben-a-szemuvegben"
+        },
+        {
+            "id": 4,
+            "headline": "Ha így látsz, gáz van", 
+            "abstract": "TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT ", 
+            "imageUrl": "article4.jpg",
+            "slug": "ha-igy-latsz-gaz-van"
+        },
+        {
+            "id": 5,
+            "headline": "Brit tudósok: A szemüvegesek viccesebbek", 
+            "abstract": "TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT ", 
+            "imageUrl": "article5.jpg",
+            "slug": "brit-tudosok-a-szemuvegesek-viccesebbek"
+        },
+        {
+            "id": 6,
+            "headline": "Nyerj utazást szemüvegekkel!", 
+            "abstract": "TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT ", 
+            "imageUrl": "article6.jpg",
+            "slug": "nyerj-utazast-szemuvegekkel"
+        },
+        {
+            "id": 7,
+            "headline": "Tech: Testszag javítás szemüveggel?", 
+            "abstract": "TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT ", 
+            "imageUrl": "article7.jpg",
+            "slug": "tech-testszag-javitas-szemuveggel"
+        }
+    ]
+}

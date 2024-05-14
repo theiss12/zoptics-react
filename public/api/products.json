@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Háromszemű-veg",
+            "categoryId": "Futurisztikus",
+            "color": "yellow",
+            "type": "unisex",
+            "imageUrl": "/img/product1.jpg",
+            "price": 19999,
+            "discount": 0,
+            "currency": "HUF"
+        },
+        {
+            "id": 2,
+            "name": "Luxus Napszempa",
+            "categoryId": "Luxus",
+            "color": "grey",
+            "type": "male",
+            "imageUrl": "/img/product2.jpg",
+            "price": 99999,
+            "discount": 0.5,
+            "currency": "HUF"
+        },
+        {
+            "id": 3,
+            "name": "Napszemüveg (Luxus+)",
+            "categoryId": "Luxus",
+            "color": "black",
+            "type": "female",
+            "imageUrl": "/img/product3.jpg",
+            "price": 999999,
+            "discount": 0.3,
+            "currency": "HUF"
+        },
+        {
+            "id": 4,
+            "name": "Basic Napszemüveg",
+            "categoryId": "Napszemüveg",
+            "color": "black",
+            "type": "unisex",
+            "imageUrl": "/img/product4.jpg",
+            "price": 9999,
+            "discount": 0,
+            "currency": "HUF"
+        },
+        {
+            "id": 5,
+            "name": "Gyermek Napszemüveg",
+            "categoryId": "Gyermek",
+            "color": "red",
+            "type": "unisex",
+            "imageUrl": "/img/product5.jpg",
+            "price": 39999,
+            "discount": 0.7,
+            "currency": "HUF"
+        },
+        {
+            "id": 6,
+            "name": "Fancy Olvasószempa",
+            "categoryId": "Olvasó",
+            "color": "grey",
+            "type": "male",
+            "imageUrl": "/img/product6.jpg",
+            "price": 799999,
+            "discount": 0,
+            "currency": "HUF"
+        },
+        {
+            "id": 7,
+            "name": "'Gazdag vagyok' szemüveg",
+            "categoryId": "Olvasó",
+            "color": "orange",
+            "type": "female",
+            "imageUrl": "/img/product7.jpg",
+            "price": 79999,
+            "discount": 0,
+            "currency": "HUF"
+        },
+        {
+            "id": 8,
+            "name": "'A NAGYÍTÓ'",
+            "categoryId": "Olvasó",
+            "color": "black",
+            "type": "unisex",
+            "imageUrl": "/img/product8.jpg",
+            "price": 7999,
+            "discount": 0.7,
+            "currency": "HUF"
+        },
+        {
+            "id": 9,
+            "name": "Szódás szemcsi",
+            "categoryId": "Olvasó",
+            "color": "black",
+            "type": "male",
+            "imageUrl": "/img/product9.jpg",
+            "price": 29999,
+            "discount": 0.5,
+            "currency": "HUF"
+        },
+        {
+            "id": 10,
+            "name": "Vakok mentsvára",
+            "categoryId": "Olvasó",
+            "color": "red",
+            "type": "female",
+            "imageUrl": "/img/product10.jpg",
+            "price": 699999,
+            "discount": 0.1,
+            "currency": "HUF"
+        }
+    ]
+}

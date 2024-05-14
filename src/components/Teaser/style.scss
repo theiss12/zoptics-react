@@ -1,0 +1,57 @@
+.component-teaser {
+    display: flex;
+    margin: 0 0 100px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    height: 500px;
+    justify-content: center;
+    opacity: 0;
+
+    animation-name: teaser-fade-in;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    @keyframes teaser-fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    &__image {
+        display: block;
+        width: 50%;
+        object-fit:cover;
+        order: 0;
+        border-radius: 10px 0 0 10px;
+    }
+
+    &__information {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 64px;
+
+        .component-teaser__headline {
+            font-size: 40px;
+            margin: 0 0 32px;
+        }
+
+        .component-teaser__abstract {
+            margin: 0 0 32px;
+            font-size: 20px;
+        }
+    }
+
+    &:nth-child(odd) {
+        // right: -200svw;
+        .component-teaser__image {
+            order: 1;
+            border-radius: 0 10px 10px 0;
+        }
+    }
+}
