@@ -26,7 +26,7 @@ function Contact() {
                     <h2 className="contact__headline">Elérhetőség</h2>
                     <div className="contact__details">
                         <p className="contact__details-label">Cégnév:</p>
-                        <p className="contact__details-info">YYY Kft.<button className="copy-button" onClick={copyContents}>📄</button></p>
+                        <p className="contact__details-info">Zoptics Kft.<button className="copy-button" onClick={copyContents}>📄</button></p>
 
                         <p className="contact__details-label">Telefonszám:</p>
                         <a className="contact__details-info" href="tel:+36012345678">+36 01 234 5678</a>
