@@ -1,6 +1,6 @@
 import "./style.scss";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { AppContext } from "../../providers/AppProvider";
 
 // function formatNumberToCost(n) {
@@ -73,7 +73,12 @@ function Navigation({cartItems = []}) {
     const { pathname } = useLocation();
     useEffect(()=> {
         //console.log(pathname);
-    }, [pathname])
+    }, [pathname]);
+
+    const navigate = useNavigate();
+
+    // const { searchTerm, setSearchTerm } = useContext(AppContext);
+    const [searchTerm, setSearchTerm] = useState("");
 
     return (
         <nav className={`component-navigation ${pathname === "/game" ? "game" : ""}`}>
@@ -102,6 +107,24 @@ function Navigation({cartItems = []}) {
                     })
                 }
             </ul>
+            <form 
+                className="component-navigation__search"
+                onSubmit={
+                    (submitEvent) => {
+                        submitEvent.preventDefault();
+                        navigate(`/search?searchTerm=${searchTerm}`, {state: searchTerm});
+                        window.document.activeElement.value = "";
+                        window.document.activeElement.blur();
+                    }
+                }
+            >
+                <input 
+                    placeholder="🔎 Keresés az oldalon..."
+                    type="text" 
+                    className="component-navigation__search-input"
+                    onChange={ changeEvent => setSearchTerm(changeEvent.target.value) }
+                />
+            </form>
         </nav>
     );
 }

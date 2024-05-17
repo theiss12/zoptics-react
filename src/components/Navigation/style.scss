@@ -5,6 +5,7 @@
     top: 0px;
     z-index: 100;
     transition: all .25s;
+    display: flex;
 
     &.game {
         background: transparent;
@@ -18,6 +19,7 @@
     margin: 0;
     display: flex;
     list-style-type: none;
+    width: 100%;
 }
 
 .component-navigation-menu > li {
@@ -159,4 +161,28 @@
     width: 30%;
     justify-content: end;
     padding: 0 4px;
+}
+
+.component-navigation__search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-input {
+        box-sizing: border-box;
+        margin: 0 20px 0 0;
+        padding: 0 10px;
+        height: 60%;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 400px;
+        transition: all .25s;
+        width: 200px;
+
+        &:focus-visible {
+            box-shadow: 0 0 20px white;
+            width: 400px;
+            outline: none;
+        }
+    }
 }

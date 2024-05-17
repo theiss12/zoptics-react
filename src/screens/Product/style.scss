@@ -1,0 +1,13 @@
+.screen-product {
+    
+    .gallery-summary-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        > * {
+            width: 45%;
+            min-height: 700px;
+            box-sizing: border-box;
+        }
+    }
+}

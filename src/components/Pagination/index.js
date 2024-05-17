@@ -1,3 +1,5 @@
+// myItems.slice((activePage - 1) * pageSize, ((activePage - 1) * pageSize) + pageSize).map(
+
 import "./style.scss";
 
 function Pagination({ activePage, pageSize, itemsLength, onPageClick }) {

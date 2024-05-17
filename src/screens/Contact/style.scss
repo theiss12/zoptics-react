@@ -1,5 +1,9 @@
 .screen-contact {
     padding: 64px 0 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
 
     .container {
         display: flex;
@@ -8,7 +12,7 @@
         min-height: 600px;
 
         > * {
-            flex: 1;
+            width: 50%;
         }
     }
 
@@ -17,7 +21,7 @@
             transition: all .25s;
 
             &:hover {
-                flex: 2;
+                width: 100%;
                 &+.contact__wrapper {
                     scale: 0.8;
                 }
@@ -35,7 +39,7 @@
             transition: all .5s;
             
             &:hover {
-                flex: 2;
+                width: 100%;
                 scale: 1.2;
             }
         }

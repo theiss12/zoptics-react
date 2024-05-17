@@ -1,6 +1,6 @@
 import "./style.scss";
 import { useEffect, useState, useContext } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { getSessionProducts } from "../../services/session";
 import { Range } from "react-range";
 import Pagination from "../../components/Pagination";
@@ -278,7 +278,7 @@ function Products() {
                                 <img className="result-item__image" src={product.imageUrl} />
                                 <div className="result-item__information">
                                     <h3 className="result-item__name">
-                                        {product.name}
+                                        <Link to={"/products/" + product.slug}>{product.name}</Link>
                                     </h3>
                                     <h4 className="result-item__cost">
                                         {Math.round(product.price * (1 - product.discount))} {product.currency}
@@ -289,14 +289,20 @@ function Products() {
                                             {product.price} {product.currency}
                                         </h5>
                                     }
-                                    <button 
-                                        className="button"
-                                        onClick={() => {
-                                            updateCart(product, 1);
-                                        }}
-                                    >
-                                        Kosárba teszem
-                                    </button>
+                                    <div className="result-item__buttons">
+                                        <button 
+                                            className="button"
+                                            onClick={() => {
+                                                updateCart(product, 1);
+                                            }}
+                                        >
+                                            Kosárba teszem
+                                        </button>
+                                        
+                                        <Link to={"/products/" + product.slug}>
+                                            Részletek
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         )

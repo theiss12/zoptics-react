@@ -6,6 +6,7 @@ export const AppContext = createContext();
 
 const AppProvider = (props) => {
     const [cartItems, setCartItems] = useState(getSessionCart());
+    const [searchTerm, setSearchTerm] = useState("");
 
     const updateCart = (product, quantity) => {
         const newCart = getNewCart(product, quantity);
@@ -14,7 +15,7 @@ const AppProvider = (props) => {
     };
 
     return (
-        <AppContext.Provider value={{updateCart, cartItems}}>
+        <AppContext.Provider value={{updateCart, cartItems, searchTerm, setSearchTerm}}>
             {props.children}
         </AppContext.Provider>
     )

@@ -8,7 +8,7 @@ function Contact() {
     }
 
     return (
-        <section className="screen-contact">
+        <section className="screen-contact" style={{backgroundImage: "url(/img/contact-background.jpg)"}}>
             <div className="container">
                 <iframe 
                     className="contact__map"
@@ -26,7 +26,13 @@ function Contact() {
                     <h2 className="contact__headline">Elérhetőség</h2>
                     <div className="contact__details">
                         <p className="contact__details-label">Cégnév:</p>
-                        <p className="contact__details-info">Zoptics Kft.<button className="copy-button" onClick={copyContents}>📄</button></p>
+                        <p className="contact__details-info">
+                            Zoptics Kft.
+                            <button 
+                                className="copy-button" 
+                                onClick={copyContents}
+                            >📄</button>
+                        </p>
 
                         <p className="contact__details-label">Telefonszám:</p>
                         <a className="contact__details-info" href="tel:+36012345678">+36 01 234 5678</a>
@@ -35,7 +41,13 @@ function Contact() {
                         <a className="contact__details-info" href="mailto:tamas.zeiss@gmail.com">tamas.zeiss@gmail.com</a>
                         
                         <p className="contact__details-label">Cím:</p>
-                        <p className="contact__details-info">Túl Az Operencián 2<button className="copy-button" onClick={copyContents}>📄</button></p>
+                        <p className="contact__details-info">
+                            Túl Az Operencián 2
+                            <button 
+                                className="copy-button" 
+                                onClick={copyContents}
+                            >📄</button>
+                        </p>
                     </div>
                 </div>
             </div>

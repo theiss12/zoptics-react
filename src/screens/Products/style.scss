@@ -107,7 +107,7 @@
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
                 border-radius: 10px;
                 display: flex;
-                height: 300px;
+                height: 350px;
                 min-width: 80%;
                 background-color: white;
                 margin: 0 0 60px;
@@ -117,7 +117,7 @@
                 user-select: none;
 
                 &__image {
-                    height: 300px;
+                    height: 350px;
                     width: 40%;
                     object-fit: cover;
                     border-radius: 10px 0 0 10px;
@@ -125,12 +125,20 @@
 
                 &__information {
                     padding: 40px;
+                    width: 60%;
+                    box-sizing: border-box;
                 }
 
                 &__name {
                     font-size: 30px;
                     margin: 0 0 24px;
                     text-align: left;
+
+                    a {
+                        color: black;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
                 }
 
                 &__price-label {
@@ -150,6 +158,22 @@
                     color: grey;
                     text-decoration: line-through;
                     margin: 0 0 30px;
+                }
+
+                &__buttons {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    // align-items: center;
+
+                    .button {
+                        width: 40%;
+                        margin-bottom: 20px;
+                    }
+
+                    .button {
+                        
+                    }
                 }
             }
         }
