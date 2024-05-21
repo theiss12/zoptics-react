@@ -7,9 +7,10 @@ function ProductInfo() {
                 <h2 className="warrant__headline">
                     Információk:
                 </h2>
-                <p className="warrant__information">
-                    14 napos ingyenes termék-visszaküldés garancia
-                </p>
+                <ul className="warrant__information">
+                    <li>14 napos ingyenes termék-visszaküldés garancia</li>
+                    <li>20 év garancia minden termékre</li>
+                </ul>
             </div>
             <div className="description">
                 <h2 className="description__headline">Leírás</h2>

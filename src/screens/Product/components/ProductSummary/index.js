@@ -38,9 +38,11 @@ function ProductSummary({product = {}}) {
         const todayDate = new Date();
         todayDate.setDate(todayDate.getDate() + 1);
         const today = `${todayDate.getFullYear()}.${todayDate.getMonth() + 1}.${todayDate.getDate()}`;
+
         const maxDeliveryDate = new Date();
         maxDeliveryDate.setDate(maxDeliveryDate.getDate() + selectedProvider.maxDaysToDeliver);
         const maxDelivery = `${maxDeliveryDate.getFullYear()}.${maxDeliveryDate.getMonth() + 1}.${maxDeliveryDate.getDate()}`;
+        
         return `${today}${maxDeliveryDate.getTime() === todayDate.getTime() ? "" : " - " + maxDelivery}`;
     }
 

@@ -1,6 +1,7 @@
 import "./style.scss";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
+import Suggestions from "../../components/Suggestions";
 
 function Article({ articles }) {
     const [articleData, setArticleData] = useState({});
@@ -17,13 +18,6 @@ function Article({ articles }) {
             })
             .catch(error => setFetchError(true));
     }, [slug]);
-
-    const navigate = useNavigate();
-    const navigatToArticle = (slug) => {
-        navigate(`/blog/${slug}`);
-    };
-
-    const suggestionStart = Math.floor((articles.length - 3) * Math.random());
 
     return (
         fetchError ?
@@ -53,35 +47,25 @@ function Article({ articles }) {
 
                         <div
                             className="article__content"
-                            //dangerouslySetInnerHTML={{ __html: articleData.content }}
                             ref={contentRef}
                         >
                         </div>
                     </div>
                 </article>
-                <section className="suggestions">
-                    <div className="container">
-                        <h2 className="suggestions__title">Hasonló cikkek:</h2>
-                        <div className="suggestion-items">
-                            {
-                                articles.filter(article => article.id !== articleData.id).slice(suggestionStart, suggestionStart + 3).map(article =>
-                                    <div
-                                        key={article.id}
-                                        className="suggestion-item"
-                                        onClick={() => {
-                                            navigatToArticle(article.slug);
-                                        }}
-                                    >
-                                        <h3 className="suggestion-item__headline">
-                                            {article.headline}
-                                        </h3>
-                                        <img className="suggestion-item__image" src={`/img/${article.imageUrl}`} />
-                                    </div>
-                                )
-                            }
-                        </div>
-                    </div>
-                </section>
+                <div className="container">
+                    <Suggestions 
+                        items={
+                            articles.map(article => {return{
+                                id: article.id,
+                                endpoint: `/blog/${article.slug}`,
+                                imageUrl: `/img/${article.imageUrl}`,
+                                headline: article.headline
+                            }})
+                        } 
+                        currentId={articleData.id}
+                        headline={"Hasonló cikkek"}
+                    />
+                </div>
             </div>
     )
 }

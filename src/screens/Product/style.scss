@@ -1,12 +1,23 @@
 .screen-product {
+
+    &__category {
+        margin: 0 0 32px;
+        padding: 40px 0 0;
+        font-size: 26px;
+    }
+
+    &__name {
+        margin: 0 0 32px;
+        font-size: 48px;
+    }
     
     .gallery-summary-wrapper {
         display: flex;
         justify-content: space-between;
+        margin: 0 0 64px;
 
         > * {
             width: 45%;
-            min-height: 700px;
             box-sizing: border-box;
         }
     }

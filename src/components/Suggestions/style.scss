@@ -1,0 +1,42 @@
+.component-suggestions {
+    margin: 0 0 100px;
+    padding: 64px 0 0;
+
+    &__title {
+        margin: 0 0 48px;
+        font-size: 32px;
+    }
+
+    .suggestion-items {
+        display: flex;
+        justify-content: space-between;
+        
+        .suggestion-item {
+            background-color: var(--darkColor);
+            color: white;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 410px;
+            height: 410px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            transition: all .25s;
+
+            &__headline {
+                margin: 0;
+                padding: 20px;
+            }
+
+            &__image {
+                height: 75%;
+                object-fit: cover;
+            }
+
+            &:hover {
+                scale: 1.15;
+            }
+        }
+    }
+}
