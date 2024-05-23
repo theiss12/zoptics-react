@@ -1,0 +1,11 @@
+.screen-cart {
+    background-color: var(--darkColor);
+    padding-bottom: 40px;
+
+    .button.checkout {
+        display: block;
+        text-align: center;
+        max-width: 10%;
+        margin: 0 auto;
+    }
+}

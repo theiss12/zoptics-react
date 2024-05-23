@@ -3,7 +3,8 @@ export const API_RESOURCES = new Map([
     ["refferences",     {endpointUrl: "/api/refferences.json"}],
     ["slides",          {endpointUrl: "/api/coverSlides.json"}],
     ["product-groups",  {endpointUrl: "/api/productGroups.json"}],
-    ["products",        {endpointUrl: "/api/products.json"}],
+    ["products",        {endpointUrl: "http://localhost:3200/api/products"}],
     ["categories", {endpointUrl: "/api/categories.json"}],
-    ["articles", {endpointUrl: "/api/articles/index.json"}]
+    ["articles", {endpointUrl: "http://localhost:3200/api/articles"}],
+    ["terms", {endpointUrl: "http://localhost:3200/api/terms"}]
 ])

@@ -18,13 +18,14 @@ import { AppContext } from "../../providers/AppProvider";
 //     return output;
 // }
 
-function Cart() {
+function CartDropdown() {
     const { cartItems } = useContext(AppContext);
     const navigate = useNavigate();
     const navigateToProducts = () => {
         navigate("/products");
     };
-    const items = cartItems.length === 0 ? 
+    const isEmpty = cartItems.length === 0;
+    const items = isEmpty ? 
     <li className="empty-cart-message">
         <button 
             className="button"
@@ -54,6 +55,12 @@ function Cart() {
         <div className="dropdown">
             <ul className="dropdown-cart-items">
                 { items }
+                {
+                    !isEmpty &&
+                    <li>
+                        <Link to={"/checkout"} className="button">Kasszához</Link>
+                    </li>
+                }
             </ul>
         </div>
     );
@@ -100,7 +107,7 @@ function Navigation({cartItems = []}) {
 
                                 {
                                     navigationItem.id === "cart" && 
-                                    <Cart cartItems={cartItems}/>
+                                    <CartDropdown cartItems={cartItems}/>
                                 }
                             </li>
                         );

@@ -13,10 +13,12 @@ import Article from './screens/Article';
 import Cart from './screens/Cart';
 import Game from './screens/Game';
 import Contact from './screens/Contact';
+import Terms from './screens/Terms';
 import Search from './screens/Search';
 import DefaultLayout from './layouts/DefaultLayout';
 
 import { setSessionProducts } from './services/session';
+import Checkout from './screens/Checkout';
 
 function App() {
   const [productGroupsData, setProductGroupData] = useState([]);
@@ -53,10 +55,11 @@ function App() {
               <Route path="blog" element={ <Blog articles={articles} /> }></Route>
               <Route path="blog/:slug" element={ <Article articles={articles} /> }></Route>
               <Route path="contact" element={ <Contact /> }></Route>
-              <Route path="terms" element={ <p>Terms</p> }></Route>
+              <Route path="terms" element={ <Terms /> }></Route>
               <Route path="search" element={ <Search articles={articles}/> }></Route>
               <Route path="cart" element={ <Cart /> }></Route>
               <Route path="game" element={ <Game /> }></Route>
+              <Route path="checkout" element={ <Checkout /> }></Route>
             </Route>
           </Routes>
         </BrowserRouter>

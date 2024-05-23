@@ -1,0 +1,49 @@
+.component-accounting {
+    
+    &__input-group {
+        font-weight: bold;
+        font-size: 24px;
+        box-shadow: 0 0 20px rgba(0,0,0,.5);
+        margin: 0 auto 32px auto;
+        padding: 24px;
+        border-radius: 10px;
+        width: 50%;
+
+        &-label {
+            display: inline-block;
+            margin: 0 0 12px;
+            color: goldenrod;
+            font-size: 30px;
+        }
+
+        label {
+            display: block;
+
+            input {
+                margin: 0 24px 12px 0;
+                border: 1px solid lightgrey;
+                border-bottom: 3px solid var(--darkColor);
+                padding: 10px;
+                font-size: 24px;
+                max-width: 50%;
+
+                &:focus-visible {
+                    outline: none;
+                    border-bottom: 3px solid lightcoral;
+                }
+            }
+
+            input[type="radio"] {
+                display: none;
+            }
+
+            &:has(input[type="radio"]:checked) {
+                color: green;
+                
+                &::after {
+                    content: " ✔";
+                }
+            }
+        }
+    }
+}
