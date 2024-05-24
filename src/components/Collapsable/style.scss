@@ -1,6 +1,6 @@
 .component-collapsable {
     margin: 0 0 64px;
-    border-bottom: 3px solid lightgrey;
+    border-bottom: 2px solid lightgrey;
 
     &__headline {
         color: white;
@@ -26,6 +26,7 @@
         transform: rotate(180deg);
         // margin-left: auto;
         margin-right: 25px;
+        cursor: pointer;
 
         input {
             display: none;

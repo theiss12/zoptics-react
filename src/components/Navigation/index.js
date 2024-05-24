@@ -3,21 +3,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useContext, useState } from "react";
 import { AppContext } from "../../providers/AppProvider";
 
-// function formatNumberToCost(n) {
-//     const number = n.toString();
-//     const parts = number.split(".");
-//     const isInt = parts.length === 1;
-//     const int = isInt ? number : parts[0];
-//     var output = "";
-//     for (var d = int.length - 1; d >= 0; d--) {
-//         const iteration = int.length - 1 - d;
-//         const digit =  int.charAt(d) + (iteration % 3 === 0 && iteration !== 0 ? " ": "");
-//         output = digit + output;
-//     }
-//     if (!isInt) output += "," + parts[1];
-//     return output;
-// }
-
 function CartDropdown() {
     const { cartItems } = useContext(AppContext);
     const navigate = useNavigate();
@@ -58,7 +43,7 @@ function CartDropdown() {
                 {
                     !isEmpty &&
                     <li>
-                        <Link to={"/checkout"} className="button">Kasszához</Link>
+                        <Link to={"/checkout"} className="checkout-button">Kasszához</Link>
                     </li>
                 }
             </ul>
@@ -68,13 +53,14 @@ function CartDropdown() {
 
 function Navigation({cartItems = []}) {
     const navigationItems = [
-        {id: "home",        label: "Kezdőlap",  path: "/"},
-        {id: "products",    label: "Termékek",  path: "/products"},
-        {id: "blog",        label: "Blog",      path: "/blog"},
-        {id: "contact",     label: "Kapcsolat", path: "/contact"},
-        {id: "terms",       label: "Ászf",      path: "/terms"},
-        {id: "game",        label: "Játék",     path: "/game"},
-        {id: "cart",        label: "Kosár",     path: "/cart"}
+        {id: "home",            label: "Kezdőlap",      path: "/"},
+        {id: "products",        label: "Termékek",      path: "/products"},
+        {id: "blog",            label: "Blog",          path: "/blog"},
+        {id: "contact",         label: "Kapcsolat",     path: "/contact"},
+        {id: "terms",           label: "Ászf",          path: "/terms"},
+        {id: "data-protection", label: "Adatvédelem",   path: "/data-protection"},
+        {id: "game",            label: "Játék",         path: "/game"},
+        {id: "cart",            label: "Kosár",         path: "/cart"}
     ];
 
     const { pathname } = useLocation();

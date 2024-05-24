@@ -9,6 +9,6 @@ export const getNewCart = (/*currentCart, */product, quantity) => {
     else {
         cart = [...cart, {...product, quantity}];
     }
-    cart = cart.filter(cartItem => cartItem.quantity > -1)
+    cart = cart.filter(cartItem => cartItem.quantity > 0)
     return cart;
 }

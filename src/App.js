@@ -14,6 +14,7 @@ import Cart from './screens/Cart';
 import Game from './screens/Game';
 import Contact from './screens/Contact';
 import Terms from './screens/Terms';
+import Page from './screens/Page';
 import Search from './screens/Search';
 import DefaultLayout from './layouts/DefaultLayout';
 
@@ -24,11 +25,13 @@ function App() {
   const [productGroupsData, setProductGroupData] = useState([]);
   const [productsData, setProductsData] = useState([]);
   const [articles, setArticles] = useState([]);
+  const [dataProtectionInfo, setDataProtectionInfo] = useState({title: "", headline: "", description: ""})
 
   const apisToLoad = [
     { resourceType: "product-groups", setter: setProductGroupData, action: () => { } },
     { resourceType: "products", setter: setProductsData, action: setSessionProducts },
-    { resourceType: "articles", setter: setArticles, action: () => { } }
+    { resourceType: "articles", setter: setArticles, action: () => { } },
+    { resourceType: "data-protection", setter: setDataProtectionInfo, action: () => {}}
   ]
 
   useEffect(() => {
@@ -56,6 +59,8 @@ function App() {
               <Route path="blog/:slug" element={ <Article articles={articles} /> }></Route>
               <Route path="contact" element={ <Contact /> }></Route>
               <Route path="terms" element={ <Terms /> }></Route>
+              <Route path="data-protection" element={ <Page title={dataProtectionInfo.title} headline={dataProtectionInfo.headline} description={dataProtectionInfo.description} /> }>
+              </Route>
               <Route path="search" element={ <Search articles={articles}/> }></Route>
               <Route path="cart" element={ <Cart /> }></Route>
               <Route path="game" element={ <Game /> }></Route>

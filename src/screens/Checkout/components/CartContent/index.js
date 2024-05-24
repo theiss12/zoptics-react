@@ -8,10 +8,17 @@ function CartContent() {
     const { cartItems, updateCart } = useContext(AppContext);
     const navigate = useNavigate();
 
+    const getTotalPrice = () => {
+        return cartItems.reduce( (sum, cartItem) => {
+            return sum + (Math.round(cartItem.price * (1 - cartItem.discount))) * cartItem.quantity;
+        }, 0);
+    };
+
     useEffect(() => {
         if (cartItems.length <= 0) {
             navigate("/");
         }
+        //console.log(getTotalPrice());
     }, [cartItems])
 
     return (

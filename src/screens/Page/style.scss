@@ -1,0 +1,51 @@
+.screen-page {
+    background-color: var(--darkColor);
+    color: white;
+    padding: 64px 0;
+
+    &__title {
+        padding: 32px;
+        margin: 0 auto 64px auto;
+        font-size: 64px;
+        text-align: center;
+        background-color: white;
+        color: var(--darkColor);
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0,0,0,.5);
+        text-shadow: inset 0 0 20px rgba(0,0,0,.5);
+        width: fit-content;
+    }
+
+    &__headline {
+        margin: 0 0 64px;
+        font-size: 32px;
+        font-style: italic;
+        background-color: var(--accentColor);
+        padding: 20px;
+        box-shadow: inset 0 0 20px rgba(0,0,0,.5);
+        color: var(--darkColor);
+
+        &::after,
+        &::before {
+            content: "-";
+        }
+    }
+
+    &__description {
+        h4 {
+            margin: 0 0 32px;
+            font-size: 32px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 24px;
+            margin: 0 0 40px;
+            text-indent: 24px;
+            &::first-letter {
+                font-size: 2em;
+                font-style: italic;
+            }
+        }
+    }
+}

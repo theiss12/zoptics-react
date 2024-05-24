@@ -69,7 +69,6 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     padding: 10px;
     display: none;
-    opacity: 0.4;
     transition: 0.25s;
 }
 
@@ -106,20 +105,26 @@
     display: block;
 }
 
-.component-navigation-menu .dropdown:hover {
-    opacity: 1;
-}
-
 .component-navigation-menu .dropdown-cart-items {
     list-style-type: none;
     padding: 0 12px;
 
-    .button {
+    .checkout-button {
+        display: block;
+        font-size: 18px;
+        color: var(--darkColor);
         margin: 0 auto;
-        color: black;
         padding: 10px;
+        width: fit-content;
+        background-color: var(--accentColor);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        border-bottom: 5px solid var(--darkColor);
+        transition: all .25s;
+
         &:hover {
-            color: white;
+            scale: 1.2;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         }
     }
 }

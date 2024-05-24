@@ -13,6 +13,7 @@
             margin: 0;
             padding: 0;
             list-style-type: none;
+            min-height: 250px;
         }
 
         .step-indicator {
@@ -55,7 +56,7 @@
     }
 
     .checkout-current-step {
-        margin: 0 0 64px;
+        margin: 0 0 200px;
     }
 
     &__navigation-buttons {
@@ -63,7 +64,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 150px;
+        height: fit-content;
+        padding: 10px 0;
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        box-shadow: 0 0 20px rgba(0,0,0,.5);
     }
 
     &__navigation-button {

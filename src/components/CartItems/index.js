@@ -3,20 +3,18 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../../providers/AppProvider";
 
-function CartItems(/*{cartItems = [], updateCart}*/) {
+function CartItems() {
 
     const {cartItems, updateCart} = useContext(AppContext);
 
     const buryCartItem = (transitionEndEvent, cartItem) => {
         if (transitionEndEvent.target.className === "cart-item dead") {
-            updateCart(cartItem, -1);
+            deletetCartItem(cartItem);
         }
     }
 
-    const deletetCartItem = (cartItemQuantity, cartItem) => {
-        for (var i = 0; i < cartItemQuantity; i++) {
-            updateCart(cartItem, -1)
-        }
+    const deletetCartItem = (cartItem) => {
+        updateCart(cartItem, -cartItem.quantity);
     }
 
     const navigate = useNavigate();
@@ -45,10 +43,10 @@ function CartItems(/*{cartItems = [], updateCart}*/) {
                         </button>
                     </div> 
                     : 
-                    cartItems.map(cartItem => 
+                    cartItems.map((cartItem, cartItemIndex) => 
                         <div 
                             key={cartItem.id} 
-                            className={`cart-item ${cartItem.quantity === 0 ? "dead" : ""}`}
+                            className={`cart-item`}
                             onTransitionEnd={(transitionEndEvent) => {
                                 buryCartItem(transitionEndEvent, cartItem);
                             }}
@@ -62,7 +60,8 @@ function CartItems(/*{cartItems = [], updateCart}*/) {
                             <button 
                                 className="cart-item__delete-button"
                                 onClick={() => {
-                                    deletetCartItem(cartItem.quantity, cartItem);
+                                    const cartItemElement = document.querySelectorAll(".cart-item")[cartItemIndex];
+                                    cartItemElement.classList.add("dead");
                                 }}
                             >
                                 <img className="delete-button-image" src="/img/wastebasket.png" alt="🗑️"/>
@@ -88,7 +87,14 @@ function CartItems(/*{cartItems = [], updateCart}*/) {
                                     <button 
                                         className="change-quantity-button" 
                                         onClick={() => {
-                                            if (cartItem.quantity === 0) return; // block further change
+                                            const cartItemElement = document.querySelectorAll(".cart-item")[cartItemIndex];
+                                            if (cartItem.quantity === 1) {
+                                                cartItemElement.classList.add("dead");
+                                                return;
+                                            }
+                                            if (cartItem.quantity === 0) {
+                                                return;
+                                            }
                                             updateCart(cartItem, -1)
                                         }}
                                     >
