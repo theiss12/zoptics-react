@@ -1,0 +1,50 @@
+.component-message {
+    position: fixed;
+    z-index: 2000;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.7);
+    display: none;
+
+    &--active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__box {
+        // min-height: 25%;
+        width: 25%;
+        box-sizing: border-box;
+        background-color: white;
+        color: coral;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    &__title {
+        margin: 0 0 32px;
+        text-align: center;
+        background-color: coral;
+        color: white;
+        padding: 10px 0;
+        border-radius: 10px 10px 0 0;
+        font-size: 32px;
+    }
+
+    &__description {
+        padding: 0 24px;
+        margin: 0 0 32px;
+        font-size: 24px;
+    }
+
+    &__buttons {
+        margin: 0 0 32px;
+        padding: 0 24px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}

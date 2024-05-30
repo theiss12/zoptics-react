@@ -3,7 +3,7 @@ import { AppContext } from "../../../../providers/AppProvider";
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-function CartContent() {
+function CartContent({formData, setFormData}) {
 
     const { cartItems, updateCart } = useContext(AppContext);
     const navigate = useNavigate();
@@ -44,6 +44,12 @@ function CartContent() {
                             className="cart-item__button"
                                 onClick={() => {
                                     updateCart(cartItem, 1);
+                                    setFormData(
+                                        {
+                                            ...formData, 
+                                            totalPrice: cartItems.reduce((total, cartItem) => total + (Math.round(cartItem.price * (1 - cartItem.discount))) * cartItem.quantity, 0)
+                                        }
+                                    )
                                 }}
                             >
                                 +

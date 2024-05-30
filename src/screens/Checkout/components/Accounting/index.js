@@ -1,77 +1,129 @@
 import "./style.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function Accounting({formData = {}, setFormData = () => {}}) {
-    
-    const [isCompany, setIsCompany] = useState(false);
+function Accounting({ formData = {}, setFormData = () => { } }) {
 
-    return(
+    const [isCompany, setIsCompany] = useState(formData.company);
+
+    const inputGroups = [
+        {
+            id: "id",
+            label: "Azonosság",
+            inputs: [
+                {
+                    label: isCompany ? "Cégnév" : "Vezetéknév",
+                    type: "text",
+                    name: "fname"
+                },
+                {
+                    label: isCompany ? "Adószám" : "Keresztnév",
+                    type: "text",
+                    name: "lname"
+                }
+            ]
+        },
+        {
+            id: "contact",
+            label: "Elérhetőség",
+            inputs: [
+                {
+                    label: "Telefon",
+                    type: "tel",
+                    name: "phone"
+                },
+                {
+                    label: "E-Mail",
+                    type: "email",
+                    name: "email"
+                }
+            ]
+        },
+        {
+            id: "address",
+            label: "Cím",
+            inputs: [
+                {
+                    label: "Irányítószám",
+                    type: "text",
+                    name: "zip"
+                },
+                {
+                    label: "Település",
+                    type: "text",
+                    name: "city"
+                },
+                {
+                    label: "Utca",
+                    type: "text",
+                    name: "street"
+                },
+                {
+                    label: "Házszám",
+                    type: "text",
+                    name: "house"
+                }
+            ]
+        },
+    ];
+
+    return (
         <section className="component-accounting">
-            <p className="component-accounting__input-group">
-                <span className="component-accounting__input-group-label">Megrendelő típus:</span>
-                <label>
+            <p className="component-accounting__input-group component-accounting__input-group--type">
+                {/* <span className="component-accounting__input-group-label">Megrendelő típusa</span> */}
+                <label className="component-accounting__input-description">
                     <input
-                        type="radio" 
-                        name="customer-type" 
-                        value={"person"} 
-                        onChange={() => {setIsCompany(false)}}
+                        type="radio"
+                        name="customer-type"
+                        value={"person"}
+                        onChange={() => {
+                            setIsCompany(false);
+                            setFormData({ ...formData, company: false });
+                        }}
                         checked={!isCompany}
                         required
                     />
                     Magánszemély
                 </label>
-                <label>
+                <label className="component-accounting__input-description">
                     <input
-                        type="radio" 
-                        name="customer-type" 
-                        value={"company"} 
-                        onChange={() => {setIsCompany(true)}}
+                        type="radio"
+                        name="customer-type"
+                        value={"company"}
+                        onChange={() => {
+                            setIsCompany(true);
+                            setFormData({ ...formData, company: true });
+                        }}
                         checked={isCompany}
                         required
                     />
                     Cég
                 </label>
             </p>
-
-            <p className="component-accounting__input-group">
-                <label>
-                    <input type="text" name="last-name" required/>
-                    {isCompany ? "Cégnév" : "Vezetéknév"}
-                </label>
-                <label>
-                    <input type="text" name="first-name" required/>
-                    {isCompany ? "Adószám" : "Keresztnév"}
-                </label>
-            </p>
-
-            <p className="component-accounting__input-group">
-                <label>
-                    <input type="tel" name="telephone"/>
-                    Telefonszám
-                </label>
-                <label>
-                    <input type="email" name="email" required/>
-                    E-Mail
-                </label>
-            </p>
-            <p className="component-accounting__input-group">
-                <label>
-                    <input type="text" name="zip-code" required/>
-                    Irányítószám
-                </label>
-                <label>
-                    <input type="text" name="settlement" required/>
-                    Település
-                </label>
-                <label>
-                    <input type="text" name="street" required/>
-                    Utca
-                </label>
-                <label>
-                    <input type="text" name="house-number" required/>
-                    Házszám
-                </label>
-            </p>
+            {
+                inputGroups.map(inputGroup => 
+                    <p key={inputGroup.id} className={`component-accounting__input-group component-accounting__input-group--${inputGroup.id}`}>
+                        <span className="component-accounting__input-group-label">{inputGroup.label}</span>
+                        {
+                            inputGroup.inputs.map(input =>
+                                <label key={input.name} className="component-accounting__input-description">
+                                    <input
+                                        type={input.type}
+                                        name={input.name}
+                                        required
+                                        onInput={inputEvent => {
+                                            const newFormData = {...formData};
+                                            newFormData[input.name] = inputEvent.target.value
+                                            setFormData(newFormData);
+                                        }}
+                                        value={formData[input.name]}
+                                    />
+                                    {input.label}
+                                </label>
+                            )
+                        }
+                    </p>
+                )
+            }
         </section>
     );
 }

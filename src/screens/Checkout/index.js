@@ -3,7 +3,8 @@ import CartContent from "./components/CartContent";
 import Accounting from "./components/Accounting";
 import Shipping from "./components/Shipping";
 import Summary from "./components/Summary";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { AppContext } from "../../providers/AppProvider";
 
 function Checkout() {
 
@@ -16,9 +17,33 @@ function Checkout() {
         accounting: "accounting",
         shipping: "shipping",
         summary: "summary"
-    }
+    };
 
-    const [formData, setFormData] = useState({});
+    const { cartItems } = useContext(AppContext);
+
+    const [formData, setFormData] = useState({
+        company: false,
+        fname: "", 
+        lname: "", 
+        phone: "", 
+        email: "", 
+        zip: "", 
+        city: "", 
+        street: "", 
+        house: "",
+        paymentType: "cash",
+        totalPrice: cartItems.reduce((total, cartItem) => total + (Math.round(cartItem.price * (1 - cartItem.discount))) * cartItem.quantity, 0),
+        shipping: {
+            fname: "", 
+            lname: "", 
+            phone: "", 
+            email: "", 
+            zip: "", 
+            city: "", 
+            street: "", 
+            house: "",
+        }
+    });
     const [currentStep, setCurrentStep] = useState(STEP_TYPES.cart);
     const [previousEnabled, setPreviousEnabled] = useState(false);
     const [nextEnabled, setNextEnabled] = useState(true);
@@ -27,7 +52,7 @@ function Checkout() {
         {
             id: STEP_TYPES.cart, 
             label: "Kosár áttekintése",
-            component: <CartContent />
+            component: <CartContent formData={formData} setFormData={setFormData}/>
         },
         {
             id: STEP_TYPES.accounting, 
