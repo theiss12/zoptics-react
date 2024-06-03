@@ -22,3 +22,34 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .screen-product {
+        padding: 0 30px;
+        .gallery-summary-wrapper {
+            flex-direction: column;
+            margin: 0;
+
+            > * {
+                width: unset;
+                box-sizing: border-box;
+                margin: 0 0 64px;
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .screen-product {
+        &__category {
+            margin: 0 0 32px;
+            padding: 40px 0 0;
+            font-size: 16px;
+        }
+    
+        &__name {
+            margin: 0 0 32px;
+            font-size: 28px;
+        }
+    }
+}

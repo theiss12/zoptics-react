@@ -26,7 +26,7 @@ function Search({articles = []}) {
             } else {
                 resultItem[property] = resultItem[property].toString();
             }
-            if (resultItem[property].toLowerCase().includes(searchTerm)) {
+            if (resultItem[property].toLowerCase().includes(searchTerm.toLowerCase())) {
                 matchFound = true;
             }
         });

@@ -1,7 +1,19 @@
 import "./style.css";
 import Button from "../Button";
+import { useState, useLayoutEffect } from "react";
 
 function Tiles({items}) {
+    const [numberOfTilesInRow, setNumberOfTilesInRow] = useState(3);
+
+    useLayoutEffect(() => {
+		const updateSize = () => {
+            setNumberOfTilesInRow(window.innerWidth > 768 ? 3 : 2);
+		};
+
+		window.addEventListener('resize', updateSize);
+		updateSize();
+		return () => window.removeEventListener('resize', updateSize);
+	}, []);
 
     const breakUpItems = () => {
         const rows = [
@@ -10,7 +22,7 @@ function Tiles({items}) {
 
 		items.forEach(element => {
 			// if the last row (rows[rows.length -1]) has less element than the defined number of elements
-			if (rows[rows.length - 1].length < 3) {
+			if (rows[rows.length - 1].length < numberOfTilesInRow) {
 				rows[rows.length - 1].push(element);
 			} else {
 				rows.push([element]);
@@ -36,7 +48,7 @@ function Tiles({items}) {
                                         tile =>
                                         <div 
                                             key={tile.id}
-                                            className={`tile ${tile.size === "big" ? "tile--big" : ""}`}
+                                            className={`tile tile--${numberOfTilesInRow === 3 ? tile.size : tile.sizeMobile}`}
                                             style={{backgroundImage: `url(${tile.imageUrl})`}}
                                         >
                                             {/* <button className="button">

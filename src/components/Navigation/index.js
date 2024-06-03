@@ -1,6 +1,6 @@
 import "./style.scss";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useContext, useState, useLayoutEffect } from "react";
 import { AppContext } from "../../providers/AppProvider";
 
 function CartDropdown() {
@@ -72,9 +72,27 @@ function Navigation({cartItems = []}) {
 
     // const { searchTerm, setSearchTerm } = useContext(AppContext);
     const [searchTerm, setSearchTerm] = useState("");
+    const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
+
+    const toggleMobileMenu = () => {
+        setMobileMenuOpened(!mobileMenuOpened);
+    };
+
+    useLayoutEffect(() => {
+		const updateSize = () => {
+			// console.log(window.innerWidth)
+            if (window.innerWidth > 768) {
+                setMobileMenuOpened(false);
+            }
+		};
+
+		window.addEventListener('resize', updateSize);
+		updateSize();
+		return () => window.removeEventListener('resize', updateSize);
+	}, []);
 
     return (
-        <nav className={`component-navigation ${pathname === "/game" ? "game" : ""}`}>
+        <nav className={`component-navigation ${pathname === "/game" ? "game" : ""} ${mobileMenuOpened ? "open" : ""}`}>
             <ul className="component-navigation-menu">
                 {
                     navigationItems.map(navigationItem => {
@@ -86,7 +104,12 @@ function Navigation({cartItems = []}) {
                                 key={navigationItem.id} 
                                 className={ `${isCartClass} ${isActiveClass}` }
                             >
-                                <Link to={navigationItem.path}>
+                                <Link
+                                    to={navigationItem.path}
+                                    onClick={() => {
+                                        setMobileMenuOpened(false);
+                                    }}
+                                >
                                     {navigationItem.label}
                                     {navigationItem.id === "cart" && <img src="/img/cart.png" />}
                                 </Link>
@@ -118,6 +141,15 @@ function Navigation({cartItems = []}) {
                     onChange={ changeEvent => setSearchTerm(changeEvent.target.value) }
                 />
             </form>
+
+            <button 
+                className="mobile-toggle-button"
+                onClick={toggleMobileMenu}
+            >
+                <div className="mobile-toggle-button__stripe"></div>
+                <div className="mobile-toggle-button__stripe"></div>
+                <div className="mobile-toggle-button__stripe"></div>
+            </button>
         </nav>
     );
 }

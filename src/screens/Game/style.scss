@@ -40,10 +40,10 @@
                 &__button {
                     font-size: 2em;
                     font-weight: bold;
-                    background-color: rgba(255, 255, 255, 0.5);
+                    background-color: rgba(0, 0, 0, 0.5);
                     border-radius: 1000px;
                     border: none;
-                    color: gold;
+                    color: white;
                     animation-name: glowing-text;
                     animation-iteration-count: infinite;
                     animation-duration: 1s;
@@ -191,5 +191,97 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .screen-game {
+        .game {
+
+            &__title {
+                font-size: 32px;
+                margin: 20px 0;
+            }
+        
+            &__headline {
+                font-size: 24px;
+                margin: 20px 0;
+            }
+    
+            &__row {
+                margin: 40px 0;
+    
+                .clue {
+                    position: relative;
+                    &__button {
+                        font-size: 1.5em;
+                        translate: -75% 0;
+    
+                        @keyframes glowing-text {
+                            0% {
+                                text-shadow: 0 0 20px transparent;
+                                scale: 1;
+                            }
+                            50% {
+                                text-shadow: 0 0 20px gold;
+                                scale: 1.2;
+                            }
+                            100% {
+                                text-shadow: 0 0 20px transparent;
+                                scale: 1;
+                            }
+                        }
+    
+                        &:active + .clue__content {
+                            display: initial;
+                        }
+                    }
+
+                    &__content {
+                        display: none;
+                        top: 20px;
+                    }
+                }
+            }
+    
+            &__element {
+                --dimensions: 15vmin;
+                width: var(--dimensions);
+                height: var(--dimensions);
+                margin: 0 auto;
+            }
+        }
+
+        .won-wrapper {
+            @keyframes orbit {
+                0% {
+                    scale: 0;
+                    translate: 0% 0%;
+                    rotate: 360deg;
+                }
+                100% {
+                    scale: 1;
+                    translate: 0% 0%;
+                    rotate: 0deg;
+                }
+            }
+    
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .screen-game {
+        .game {
+            &__title {
+                font-size: 24px;
+                margin: 20px 0;
+            }
+        
+            &__headline {
+                font-size: 16px;
+                margin: 20px 0;
+            }
+        }
     }
 }

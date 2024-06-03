@@ -59,3 +59,55 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .component-cart-content {
+        .cart-items {
+            .cart-item {
+                position: relative;
+                flex-direction: column;
+                justify-content: center;
+                // align-items: unset;
+                flex-wrap: unset;
+                height: 325px;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 20px;
+                border-radius: 0;
+                overflow-y: hidden;
+                margin: 0;
+
+                > * {
+                    position: relative;
+                    z-index: 1;
+                }
+
+                span {
+                    background-color: transparent; //rgba(0,0,0,.5);
+                    width: 100%;
+                    border-style: none;
+                    padding: 0;
+                    // font-weight: bold;
+                    text-shadow: 2px 2px 2px rgba(0,0,0,.5);
+                    font-size: 40px;
+                    text-align: center;
+                }
+
+                &__image {
+                    position: absolute;
+                    width: 100%;
+                    height: unset;
+                    z-index: 0;
+                    filter: brightness(50%);
+                }
+
+                &__button-wrapper {
+                    background-color: transparent; //rgba(0,0,0,.5);
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}

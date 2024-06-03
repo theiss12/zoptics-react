@@ -39,3 +39,21 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .component-product-info {
+        .warrant,
+        .description__details {
+            font-size: 24px;
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .component-product-info {
+        .warrant,
+        .description__details {
+            font-size: 16px;
+        }
+    }
+}

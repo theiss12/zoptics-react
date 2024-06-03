@@ -29,3 +29,28 @@
 .component-services .description {
     margin: 0 0 24px;
 }
+
+@media (max-width: 768px) {
+    .component-services {
+        padding: 40px;
+    }
+    .component-services .services {
+        flex-direction: column;
+    }
+
+    .component-services .service {
+        width: 100%;
+        margin: 0 0 64px;
+    }
+}
+
+@media (max-width: 768px) {
+    .component-services .services {
+        flex-direction: column;
+    }
+
+    .component-services .service {
+        width: 100%;
+        margin: 0 0 64px;
+    }
+}

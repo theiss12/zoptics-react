@@ -1,6 +1,7 @@
 import "./style.scss";
 import { useState, useContext } from "react";
 import { AppContext } from "../../providers/AppProvider";
+import { Link } from "react-router-dom";
 
 function ProductGroup({ group, products, /*updateCart,*/ collapsedState = true}) {
     const [collapsed, setCollapse] = useState(collapsedState);
@@ -54,7 +55,12 @@ function ProductGroup({ group, products, /*updateCart,*/ collapsedState = true})
                                     </p>
                                 }
                                 <h4 className="product-name">
-                                    {product.name}
+                                    <Link 
+                                        to={"products/" + product.slug}
+                                        onClick={() => {window.scroll(0, 0)}}
+                                    >
+                                        {product.name}
+                                    </Link>
                                 </h4>
                                 <img 
                                     className="product-image" 

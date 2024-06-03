@@ -15,7 +15,7 @@
             background-color: var(--darkColor);
             color: white;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            width: 410px;
+            width: 31%;
             height: 410px;
             display: flex;
             flex-direction: column;
@@ -36,6 +36,41 @@
 
             &:hover {
                 scale: 1.15;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .component-suggestions {
+        .suggestion-items {
+            .suggestion-item {
+                height: 250px;
+                overflow-y: hidden;
+                
+                &__headline {
+                    height: 25%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .component-suggestions {
+        .suggestion-items {
+            flex-direction: column;
+            gap: 20px;
+
+            .suggestion-item {
+                width: 100%;
+                
+                &__headline {
+                    height: unset;
+                    min-height: fit-content;
+                    font-size: 24px;
+                    padding: 10px 0 0 10px;
+                }
             }
         }
     }

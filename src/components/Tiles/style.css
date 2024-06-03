@@ -49,3 +49,27 @@
 /* .component-tiles .tile button:hover {
     opacity: 1;
 } */
+
+@media (max-width: 768px) {
+    .component-tiles {
+        .tile {
+            width: 35%;
+        }
+
+        .tile--big {
+            width: 65%;
+        }
+
+        .tile--full {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .component-tiles {
+        .tile {
+            height: 160px;
+        }
+    }
+}

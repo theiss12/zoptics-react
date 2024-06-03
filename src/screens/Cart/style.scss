@@ -9,3 +9,11 @@
         margin: 0 auto;
     }
 }
+
+@media (max-width: 420px) {
+    .screen-cart {
+        .button.checkout {
+            max-width: fit-content;
+        }
+    }
+}

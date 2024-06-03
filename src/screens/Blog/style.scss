@@ -19,3 +19,11 @@
         font-size: 50px;
     }
 }
+
+@media (max-width: 420px) {
+    .screen-blog {
+        &__title {
+            font-size: 36px;
+        }
+    }
+}

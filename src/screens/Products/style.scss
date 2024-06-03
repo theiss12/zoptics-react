@@ -93,6 +93,10 @@
                 background-size: 10%;
                 margin: 0 0 60px;
             }
+
+            .mobile-toggle-button {
+                display: none;
+            }
         }
 
         &__result-items {
@@ -352,6 +356,175 @@
                 min-width: 33%;
             }
 
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .screen-products {
+
+        .products-search {
+            flex-direction: column;
+
+            &__filter {
+                width: 100%;
+                max-height: unset;            
+                position: unset;
+                top: 96px;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                margin-right: 32px;
+                margin: 0 32px 64px 0;
+                height: fit-content;
+    
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+    
+                &:hover {
+                    width: 100%;
+                    margin-right: initial;
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+
+                .form {
+                    display: none;
+
+                    &.open {
+                        display: initial;
+                    }
+                }
+            }
+
+            &__result-items {
+                width: 100%;
+
+                .result-item {
+                    min-width: unset;
+                    width: 80%;
+                    height: unset;
+                    display: initial;
+                    
+                    &__name,
+                    &__cost {
+                        font-size: 24px;
+                    }
+
+                    &__image {
+                        height: 50vmin;
+                        width: 100%;
+                        border-radius: 10px 10px 0 0 ;
+                    }
+
+                    &__information {
+                        padding: 25px;
+                        width: 100%;
+                        height: fit-content;
+                    }
+
+                    .button {
+                        width: fit-content;
+                        margin: 0 auto 24px;
+                    }
+                }
+            }
+
+            &__title {
+                position: relative;
+
+                .mobile-toggle-button {
+                    user-select: none;
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                    right: 5%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50px;
+                    height: 50px;
+                    font-size: 36px;
+                    border-radius: 50%;
+                    border: none;
+                    background-color: white;
+                    mix-blend-mode: screen;
+                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                    transition: all .25s;
+
+                    &:active {
+                        scale: 1.2;
+                    }
+                }
+            }
+
+            .no-results-message {
+                background-color: white;
+                color: lightcoral;
+                font-size: 150%;
+                padding: 20px;
+                text-align: center;
+                border-left: 5px solid lightcoral;
+                border-radius: 10px;
+                animation-name: pulsate-message;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                max-width: 75%;
+
+                @keyframes pulsate-message {
+                    0% {
+                        color: lightcoral;
+                        transform: scale(1);
+                    }
+                    50% {
+                        color: red;
+                        transform: scale(1.1);
+                    }
+                    100% {
+                        color: lightcoral;
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+
+        .price-range__track {
+            // width: 70%;
+            margin: 0 auto 60px auto;
+        }
+
+        .form-group {
+            margin: 0 0 20px;
+            width: 75%;
+            margin: 0 auto 20px auto;
+
+            .form-control {
+
+                &__radio-group {
+                    width: fit-content;
+                    margin-left: unset;
+                    gap: 10%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .screen-products {
+        .products-search {
+            padding: 10px;
+
+            &__result-items {
+                .result-item {
+                    &__name,
+                    &__cost {
+                        font-size: 18px;
+                    }
+                }
+            }
         }
     }
 }

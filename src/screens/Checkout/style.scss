@@ -22,6 +22,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            user-select: none;
+            cursor: pointer;
 
             &__circle {
                 height: 75px;
@@ -49,12 +51,13 @@
             }
 
             &__label {
+                --label-color: var(--accentColor);
                 padding: 10px;
                 min-width: 124px;
                 text-align: center;
                 background-color: white;
-                color: var(--accentColor);
-                border-bottom: 5px solid var(--accentColor);
+                color: var(--label-color);
+                border-bottom: 5px solid var(--label-color);
                 box-shadow: 0 0 5px rgba(0,0,0,.5);
                 border-radius: 10px;
             }
@@ -77,6 +80,7 @@
         bottom: 0px;
         left: 0px;
         box-shadow: 0 0 20px rgba(0,0,0,.5);
+        z-index: 400;
     }
 
     &__navigation-button {
@@ -100,6 +104,52 @@
         &:active {
             border-bottom: 0px solid black;
             translate: 0 5px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .screen-checkout {
+        .step-indicators {
+            margin: 0;
+            
+            &__steps {
+                justify-content: space-evenly;
+            }
+
+            .step-indicator {
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .screen-checkout {
+        .step-indicators {
+            &__steps {
+                counter-reset: step-index;
+                justify-content: unset;
+                flex-direction: column;
+            }
+
+            .step-indicator {
+                counter-increment: step-index;
+                margin: 0;
+
+                &__circle {
+                    display: none;
+                }
+
+                &__label {
+                    --label-color: var(--darkColor);
+                    width: 50%;
+                    margin: 10px 0;
+                    &::before {
+                        content: counter(step-index) " - ";
+                    }
+                }
+            }
         }
     }
 }

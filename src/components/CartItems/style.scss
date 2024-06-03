@@ -202,3 +202,49 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .component-cart {
+        .cart-items {
+            .cart-item {
+                &__delete-button {
+                    display: initial;
+                    opacity: 1;
+                    transform: scale(1);
+                }
+
+                .change-quantity-button {
+                    display: initial;
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .component-cart {
+        .cart-items {
+            .cart-item {
+                flex-direction: column;
+                height: 500px;
+
+                &__image {
+                    width: 100%;
+                    height: 190px;
+                    border-radius: 10px 10px 0 0;
+                }
+
+                &__name,
+                &__cost {
+                    font-size: 24px;
+                }
+            }
+
+            .empty-cart-message {
+                width: 85%;
+            }
+        }
+    }
+}

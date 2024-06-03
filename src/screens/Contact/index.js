@@ -1,7 +1,11 @@
 import "./style.scss";
+import { useState } from "react";
 
 function Contact() {
+    const [copyAllowed, setCopyAllowed] = useState(window.isSecureContext);
+
     const copyContents = (clickEvent) => {
+        if (!copyAllowed) return;
         const contents = clickEvent.target.parentElement.innerHTML;
         const copyText = contents.substring(0, contents.indexOf("<button"));
         window.navigator.clipboard.writeText(copyText);
@@ -29,7 +33,7 @@ function Contact() {
                         <p className="contact__details-info">
                             Zoptics Kft.
                             <button 
-                                className="copy-button" 
+                                className={`copy-button ${copyAllowed ? "" : "copy-button--denied"}`} 
                                 onClick={copyContents}
                             >📄</button>
                         </p>
@@ -44,7 +48,7 @@ function Contact() {
                         <p className="contact__details-info">
                             Túl Az Operencián 2
                             <button 
-                                className="copy-button" 
+                                className={`copy-button ${copyAllowed ? "" : "copy-button--denied"}`} 
                                 onClick={copyContents}
                             >📄</button>
                         </p>

@@ -6,7 +6,7 @@
     // gap: 2vw;
     width: 75%;
     margin: 0 auto;
-    
+
     &__input-group {
         --border-color: grey;
         // color: white;
@@ -24,14 +24,13 @@
         justify-content: space-evenly;
 
         &--type {
-            grid-area: 1 / 1 / span 1 / span 1; // row - column
             text-align: center;
             background-color: coral;
             color: white;
             border-radius: 10px;
             margin: 0 0 64px;
             text-decoration: underline;
-            box-shadow: 0 0 20px rgba(0,0,0,.5);
+            box-shadow: 0 0 20px rgba(0, 0, 0, .5);
             position: relative;
 
             &::after {
@@ -48,7 +47,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                box-shadow: 0 0 20px rgba(255,255,255,.5);
+                box-shadow: 0 0 20px rgba(255, 255, 255, .5);
             }
 
             .component-shipping {
@@ -56,7 +55,7 @@
                     transition: all .25s;
                     margin: 0 32px 5px;
                     // margin: 0 0 5px;
-                    font-size: 32px;
+                    font-size: 28px;
                     width: fit-content;
                     text-align: left;
                     user-select: none;
@@ -94,7 +93,7 @@
                 display: block;
                 cursor: pointer;
                 transition: all .25s;
-    
+
                 input {
                     margin: 0 24px 16px 0;
                     border: 1px solid lightgrey;
@@ -102,23 +101,20 @@
                     padding: 10px;
                     font-size: var(--font-size);
                     max-width: 50%;
-    
+
                     &:focus-visible {
                         outline: none;
                         border-bottom: 5px solid coral;
                     }
                 }
-    
+
                 input[type="checkbox"] {
                     display: none;
                 }
-    
+
                 &:has(input[type="checkbox"]:checked) {
-                    // --selected-color: coral;//var(--accentColor);
-                    // border-bottom: 2px solid var(--selected-color);
-                    // color: var(--selected-color);
                     // margin: 0 auto 5px auto;
-                    
+
                     &::after {
                         content: " ✔";
                     }
@@ -128,15 +124,51 @@
     }
 }
 
-@media only screen and (orientation: portrait) {
+@media (max-width: 768px) {
     .component-shipping {
         display: initial;
 
         &__input-group {
-            margin: 0 auto 32px auto;
+            margin: 64px auto 32px auto;
             width: 80%;
             border: none;
             border-bottom: 1px solid var(--border-color);
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .component-shipping {
+        --font-size: 18px;
+        &__input-group {
+            padding: 0 0 24px;
+
+            &-label {
+                font-size: 24px;
+            }
+
+            .component-shipping {
+                &__input-description {
+                    margin:  0 0 24px;
+
+                    input {
+                        max-width: unset;
+                        display: block;
+                    }
+                }
+            }
+
+            &--type {
+                padding: 24px;
+
+                .component-shipping {
+                    &__input-description {
+                        font-size: 20px;
+                        margin: 0 32px 5px;
+                    }
+                }
+            }
+            
         }
     }
 }

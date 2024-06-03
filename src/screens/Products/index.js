@@ -22,6 +22,7 @@ function Products() {
     const [filterColors, setFilterColors] = useState(
         [...new Set(componentProducts.map(product => product.color))].map(color => {return {id: `color-${color}`, value: color, label: color}})
     );
+    const [mobileOpen, setMobileOpen] = useState(false);
 
     useEffect(() => {
         applySearchParams();
@@ -119,9 +120,17 @@ function Products() {
                         className="products-search__title"
                         style={{ backgroundImage: "url(/img/product-search.jpg)" }}
                     >
-                        Keresés
+                        Szűrés
+                        <button
+                            className="mobile-toggle-button"
+                            onClick={() => {
+                                setMobileOpen(!mobileOpen);
+                            }}
+                        >
+                            =
+                        </button>
                     </h2>
-                    <form className="form">
+                    <form className={`form ${mobileOpen ? "open" : ""}`}>
                         <div className="form-group">
                             <label className="form-control__label">Név</label>
                             <input

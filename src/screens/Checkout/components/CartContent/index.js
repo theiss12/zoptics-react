@@ -8,11 +8,11 @@ function CartContent({formData, setFormData}) {
     const { cartItems, updateCart } = useContext(AppContext);
     const navigate = useNavigate();
 
-    const getTotalPrice = () => {
-        return cartItems.reduce( (sum, cartItem) => {
-            return sum + (Math.round(cartItem.price * (1 - cartItem.discount))) * cartItem.quantity;
-        }, 0);
-    };
+    // const getTotalPrice = () => {
+    //     return cartItems.reduce( (sum, cartItem) => {
+    //         return sum + (Math.round(cartItem.price * (1 - cartItem.discount))) * cartItem.quantity;
+    //     }, 0);
+    // };
 
     useEffect(() => {
         if (cartItems.length <= 0) {
@@ -47,7 +47,9 @@ function CartContent({formData, setFormData}) {
                                     setFormData(
                                         {
                                             ...formData, 
-                                            totalPrice: cartItems.reduce((total, cartItem) => total + (Math.round(cartItem.price * (1 - cartItem.discount))) * cartItem.quantity, 0)
+                                            totalPrice: cartItems.reduce(
+                                                (total, cartItem) => total + (Math.round(cartItem.price * (1 - cartItem.discount))) * cartItem.quantity, 0
+                                            )
                                         }
                                     )
                                 }}

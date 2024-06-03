@@ -59,7 +59,7 @@
             left: 50%;
             translate: -50% -50%;
             object-fit: contain;
-            height: 90vh;
+            height: 90vmin;
             z-index: 500;
         }
 
@@ -79,6 +79,7 @@
             border: none;
             cursor: pointer;
             transition: all .25s;
+            z-index: 501;
 
             &:hover {
                 scale: 1.2;
@@ -93,7 +94,7 @@
         &-navigation {
             margin: 0;
             padding: 0;
-            background: rgba(255,255,255,0.5);
+            background: rgba(0,0,0,0.5);
             color: white;
             font-weight: bold;
             width: 50px;
@@ -107,6 +108,7 @@
             cursor: pointer;
             translate: -50% 0%;
             transition: all .25s;
+            z-index: 501;
 
             &:hover {
                 background-color: white;
@@ -124,6 +126,37 @@
 
             &.right {
                 left: 90%;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .component-gallery {
+        &__inspector {
+            &-close-button {
+                top: 150px;
+                right: 50px;
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .component-gallery {
+        &__current-image {
+            height: 350px;
+        }
+        
+        &__inspector {
+            // &-close-button {
+            //     top: 150px;
+            //     right: 50px;
+            // }
+
+            &-image {
+                width: 100%;
+                height: unset;
             }
         }
     }

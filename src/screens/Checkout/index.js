@@ -110,7 +110,15 @@ function Checkout() {
                     <ul className="step-indicators__steps">
                         {
                             checkoutSteps.map((checkoutStep, stepIndex) => 
-                                <li key={checkoutStep.id} className="step-indicator">
+                                <li 
+                                    key={checkoutStep.id} 
+                                    className="step-indicator"
+                                    onClick={() => {
+                                        const currentIndex = Object.keys(STEP_TYPES).indexOf(currentStep);
+                                        const change = stepIndex - currentIndex;
+                                        navigateSteps(change);
+                                    }}
+                                >
                                     <div className={`step-indicator__circle ${checkoutStep.id === currentStep ? "step-indicator__circle--active" : ""}`}>
                                         {stepIndex + 1}
                                     </div>

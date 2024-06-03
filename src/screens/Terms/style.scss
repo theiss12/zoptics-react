@@ -1,3 +1,19 @@
 .screen-terms {
     padding: 64px 0 0;
 }
+
+@media (max-width: 768px) {
+    .screen-terms {
+        // &__content {
+            padding: 64px 50px 0;
+        // }
+    }
+}
+
+@media (max-width: 420px) {
+    .screen-terms {
+        // &__content {
+            padding: 64px 20px 0;
+        // }
+    }
+}

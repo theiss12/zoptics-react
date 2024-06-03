@@ -59,7 +59,8 @@ $component: 'product-group';
             justify-content: space-between;
             text-align: center;
             gap: 50px;
-
+            height: 461px;
+            padding: 36px 20px;
             transition: all 0.5s;
             overflow-y: hidden;
             overflow-x: scroll;
@@ -80,11 +81,8 @@ $component: 'product-group';
                 background-color: lightgray;
             }
 
-            height: 461px;
-            padding: 36px 20px;
-
             .#{$component}-product {
-                width: 19%;
+                width: 250px;
                 box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
                 border-radius: 10px;
                 padding: 36px 20px; //12px?
@@ -101,9 +99,13 @@ $component: 'product-group';
                     }
                 }
 
-                .product-name {
+                .product-name,
+                .product-name a {
                     font-size: 20px;
                     margin: 0 0 20px;
+                    max-height: 30px;
+                    text-decoration: none;
+                    color: black;
                 }
 
                 .product-image {
@@ -133,6 +135,19 @@ $component: 'product-group';
         &-bar.collapsed+.#{$component}-products {
             height: 0px;
             padding: 0px 0px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .component-#{$component} {
+        .#{$component} {
+            &-products {
+                .#{$component}-product {
+                    // box-sizing: border-box;
+                    // // width: 285px;
+                }
+            }
         }
     }
 }

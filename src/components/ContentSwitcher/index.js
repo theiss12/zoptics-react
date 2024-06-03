@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./style.scss";
+import { click } from "@testing-library/user-event/dist/click";
 
 function ContentSwitcher({contents = []}) {
     const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -12,7 +13,10 @@ function ContentSwitcher({contents = []}) {
                         <button
                             key={index} 
                             className={`component-content-switcher__tab ${activeTabIndex === index ? "component-content-switcher__tab--active" : ""}`}
-                            onClick={() => {setActiveTabIndex(index);}}
+                            onClick={clickEvent => {
+                                setActiveTabIndex(index);
+                                clickEvent.target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
+                            }}
                         >
                             {content.label}
                         </button>

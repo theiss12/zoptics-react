@@ -7,7 +7,6 @@ import Gallery from "../../components/Gallery";
 import ContentSwitcher from "../../components/ContentSwitcher";
 import ProductInfo from "./components/ProductInfo";
 import ProductSummary from "./components/ProductSummary";
-import SimilarProducts from "./components/SimilarProducts";
 import Suggestions from "../../components/Suggestions";
 
 function Product() {
@@ -19,6 +18,29 @@ function Product() {
         const newProduct = products.find(product => product.slug === slug);
         setProduct(newProduct);
     }, [slug]);
+
+    const switcherContents = [
+        {
+        label: "Specifikációk",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        },
+        {
+        label: "Allergének",
+        content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        {
+        label: "Összetevők",
+        content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        },
+        {
+        label: "Összetevők",
+        content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        },
+        {
+        label: "Összetevők",
+        content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }
+    ];
 
     return (
         <section className="screen-product">
@@ -38,20 +60,7 @@ function Product() {
                 </div>
 
                 <ProductInfo />
-                <ContentSwitcher contents={
-                    [{
-                        label: "Specifikációk",
-                        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    },
-                    {
-                        label: "Allergének",
-                        content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                    },
-                    {
-                        label: "Összetevők",
-                        content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    }]
-                }/>
+                <ContentSwitcher contents={ switcherContents }/>
                 <Suggestions 
                     items={
                         products.map(product => ({

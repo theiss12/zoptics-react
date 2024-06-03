@@ -4,54 +4,63 @@
             "id": 1,
             "imageUrl": "/img/glasses1.jfif",
             "size": "big",
+            "sizeMobile": "big",
             "link": ""
         },
         {
             "id": 2,
             "imageUrl": "/img/glasses2.jfif",
             "size": "small",
+            "sizeMobile": "small",
             "link": ""
         },
         {
             "id": 3,
             "imageUrl": "/img/glasses3.jfif",
             "size": "big",
+            "sizeMobile": "small",
             "link": ""
         },
         {
             "id": 4,
             "imageUrl": "/img/glasses4.jfif",
             "size": "small",
+            "sizeMobile": "big",
             "link": ""
         },
         {
             "id": 5,
             "imageUrl": "/img/glasses5.jfif",
             "size": "big",
+            "sizeMobile": "big",
             "link": ""
         },
         {
             "id": 6,
             "imageUrl": "/img/glasses6.jfif",
             "size": "big",
+            "sizeMobile": "small",
             "link": ""
         },
         {
             "id": 7,
             "imageUrl": "/img/glasses7.jfif",
             "size": "big",
+            "sizeMobile": "small",
             "link": ""
         },
         {
             "id": 8,
             "imageUrl": "/img/glasses8.jfif",
             "size": "big",
+            "sizeMobile": "big",
             "link": ""
         },
         {
             "id": 9,
             "imageUrl": "/img/glasses9.jfif",
             "size": "small",
+            "sizeMobile": "full",
             "link": ""
         }
     ]

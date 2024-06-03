@@ -89,3 +89,35 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .component-product-summary {
+        & .delivery-info {
+            width: 65%;
+            margin: 60px auto 0;
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .component-product-summary {
+        &__price {
+            font-size: 32px;
+            margin: 0 0 26px;
+        }
+
+        &__category {
+            font-size: 26px;
+            margin: 0 0 26px;
+        }
+
+        & .delivery-info {
+            width: unset;
+            margin: 32px auto 0;
+
+            &__headline {
+                font-size: 26px;
+            }
+        }
+    }
+}
