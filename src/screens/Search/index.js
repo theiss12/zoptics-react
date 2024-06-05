@@ -1,9 +1,7 @@
 import "./style.scss";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
-import { AppContext } from "../../providers/AppProvider";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getSessionProducts } from "../../services/session";
-import { loadData } from "../../services/api";
 import Pagination from "../../components/Pagination";
 
 function Search({articles = []}) {
@@ -70,6 +68,7 @@ function Search({articles = []}) {
 
     useEffect(() => {
         executeSearch();
+        setActivePage(1);
     }, [searchTerm, articles])
 
     return (
@@ -78,7 +77,7 @@ function Search({articles = []}) {
                 <h2 className="search__title">Keresési eredmények</h2>
 
                 <h3 className="search__subtitle">
-                    Kulcsszó: {!!searchTerm ? " " + searchTerm : " -"}
+                    <span>Kulcsszó:</span> "{!!searchTerm ? searchTerm : "-"}"
                 </h3>
 
                 <ul className="search__result-items">

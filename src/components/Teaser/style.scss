@@ -4,7 +4,8 @@
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    height: 500px;
+    // height: 500px;
+    height: fit-content;
     justify-content: center;
     opacity: 0;
 
@@ -23,12 +24,17 @@
     &__image {
         display: block;
         width: 50%;
-        object-fit:cover;
+        // object-fit:cover;
         order: 0;
         border-radius: 10px 0 0 10px;
+        // height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     &__information {
+        box-sizing: border-box;
         width: 50%;
         display: flex;
         flex-direction: column;
@@ -56,7 +62,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .component-teaser {
         flex-direction: column;
         height: fit-content;
@@ -67,12 +73,20 @@
 
         &__image {
             width: 100%;
-            height: 300px;
+            height: 225px;
             border-radius: 0px;
         }
 
         &__information {
             width: unset;
+
+            .component-teaser__headline {
+                font-size: 24px;
+            }
+    
+            .component-teaser__abstract {
+                font-size: 16px;
+            }
         }
 
         &:nth-child(odd) {
@@ -100,16 +114,16 @@
 
 @media (max-width: 420px) {
     .component-teaser {
-
         &__information {
             padding: 25px;
-            .component-teaser__headline {
-                font-size: 24px;
-            }
+
+            // .component-teaser__headline {
+            //     font-size: 24px;
+            // }
     
-            .component-teaser__abstract {
-                font-size: 16px;
-            }
+            // .component-teaser__abstract {
+            //     font-size: 16px;
+            // }
         }
     }
 }

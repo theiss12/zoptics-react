@@ -3,9 +3,14 @@ import "./style.scss";
 
 function Page({title = "", headline = "", description = ""}) {
     const descriptionRef = useRef(null);
+
+    useEffect(() => {
+        window.scroll(0, 0);
+    }, []);
+
     useEffect(() => {
         descriptionRef.current.innerHTML = description;
-    }, [description])
+    }, [description]);
 
     return (
         <section className="screen-page">

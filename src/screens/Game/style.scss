@@ -23,6 +23,7 @@
             text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             font-size: 32px;
             margin: 40px 0;
+            padding: 0 20px;
         }
 
         // &__area {
@@ -37,8 +38,11 @@
 
             .clue {
                 position: relative;
+                
                 &__button {
-                    font-size: 2em;
+                    font-size: 16px;
+                    width: 30px;
+                    height: 30px;
                     font-weight: bold;
                     background-color: rgba(0, 0, 0, 0.5);
                     border-radius: 1000px;
@@ -49,6 +53,7 @@
                     animation-duration: 1s;
                     user-select: none;
                     cursor: pointer;
+                    padding: 0;
 
                     @keyframes glowing-text {
                         0% {
@@ -86,8 +91,9 @@
         }
 
         &__element {
-            width: 100px;
-            height: 100px;
+            --element-dimensions: 80px;
+            width: var(--element-dimensions);
+            height: var(--element-dimensions);
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;

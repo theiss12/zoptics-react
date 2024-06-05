@@ -58,7 +58,7 @@ function Navigation({cartItems = []}) {
         {id: "blog",            label: "Blog",          path: "/blog"},
         {id: "contact",         label: "Kapcsolat",     path: "/contact"},
         {id: "terms",           label: "Ászf",          path: "/terms"},
-        {id: "data-protection", label: "Adatvédelem",   path: "/data-protection"},
+        // {id: "data-protection", label: "Adatvédelem",   path: "/data-protection"},
         {id: "game",            label: "Játék",         path: "/game"},
         {id: "cart",            label: "Kosár",         path: "/cart"}
     ];
@@ -131,6 +131,7 @@ function Navigation({cartItems = []}) {
                         navigate(`/search?searchTerm=${searchTerm}`, {state: searchTerm});
                         window.document.activeElement.value = "";
                         window.document.activeElement.blur();
+                        setMobileMenuOpened(false);
                     }
                 }
             >

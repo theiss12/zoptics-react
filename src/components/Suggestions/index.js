@@ -23,7 +23,11 @@ function Suggestions({ items = [], currentId, headline }) {
 
     return (
         <section className="component-suggestions">
-            <h2 className="component-suggestions__title">{headline}</h2>
+            <h2 className="component-suggestions__title">
+                <span className="line"></span>
+                {headline}
+                <span className="line"></span>
+            </h2>
             <div className="suggestion-items">
                 {
                     randomItems.map(item =>

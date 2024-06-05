@@ -4,6 +4,7 @@
         margin: 0 0 32px;
         padding: 40px 0 0;
         font-size: 26px;
+        font-style: italic;
     }
 
     &__name {
@@ -23,7 +24,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .screen-product {
         padding: 0 30px;
         .gallery-summary-wrapper {
@@ -44,7 +45,7 @@
         &__category {
             margin: 0 0 32px;
             padding: 40px 0 0;
-            font-size: 16px;
+            font-size: 24px;
         }
     
         &__name {

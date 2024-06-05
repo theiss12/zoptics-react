@@ -46,6 +46,7 @@
                 font-weight: bold;
                 background-color: goldenrod;
                 cursor: pointer;
+                color: black;
 
                 &:active {
                     border-bottom: none;
@@ -60,7 +61,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .component-cart-content {
         .cart-items {
             .cart-item {
@@ -106,6 +107,20 @@
                     width: 100%;
                     display: flex;
                     justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .component-cart-content {
+        .cart-items {
+            .cart-item {
+                height: 230px;
+
+                span {
+                    font-size: 30px;
                 }
             }
         }

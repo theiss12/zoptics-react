@@ -65,6 +65,7 @@ function App() {
               <Route path="cart" element={ <Cart /> }></Route>
               <Route path="game" element={ <Game /> }></Route>
               <Route path="checkout" element={ <Checkout /> }></Route>
+              <Route path="placeholder" element={ <Page title='Placeholder' headline='Placeholder' description='<p>Placeholder<p>'/> }></Route>
             </Route>
           </Routes>
         </BrowserRouter>

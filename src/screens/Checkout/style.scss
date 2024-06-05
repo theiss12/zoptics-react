@@ -5,7 +5,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         box-shadow: inset 0 0 20px rgba(0,0,0,.5);
-        padding: 16px 0;
+        padding: 16px 0 0;
         margin: 0 0 64px;
 
         &__steps {
@@ -95,6 +95,7 @@
         font-weight: bold;
         background-color: goldenrod;
         opacity: 1;
+        color: black;
         cursor: pointer;
 
         &:disabled {
@@ -108,7 +109,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .screen-checkout {
         .step-indicators {
             margin: 0;
@@ -120,6 +121,10 @@
             .step-indicator {
                 margin: 0;
             }
+        }
+
+        &__navigation-button {
+            font-size: 16px;
         }
     }
 }
@@ -144,7 +149,9 @@
                 &__label {
                     --label-color: var(--darkColor);
                     width: 50%;
-                    margin: 10px 0;
+                    margin: 0 0 15px;
+
+
                     &::before {
                         content: counter(step-index) " - ";
                     }

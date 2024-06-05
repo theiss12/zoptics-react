@@ -2,6 +2,14 @@
     background-color: var(--darkColor);
     padding-bottom: 40px;
 
+    &__title {
+        text-align: center;
+        font-size: 45px;
+        margin: 0 0 46px;
+        padding: 46px 0 0;
+        color: white;
+    }
+
     .button.checkout {
         display: block;
         text-align: center;

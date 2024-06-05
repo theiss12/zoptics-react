@@ -1,6 +1,9 @@
 :root {
   --darkColor: rgb(34, 77, 86);
   --accentColor: rgb(118, 217, 171);
+  /* --mobile: 420px;
+  --tablet: 768px;
+  --landscape: 1000px; */
 }
 
 .container {

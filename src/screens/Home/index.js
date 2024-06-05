@@ -7,6 +7,7 @@ import Cover from "../../components/Cover";
 import Services from '../../components/Services';
 import Tiles from '../../components/Tiles';
 import ProductGroup from '../../components/ProductGroup';
+import Footer from "../../components/Footer";
 //import Cart from "../../components/Cart";
 
 function Home({productsData, productGroupsData, cartItems, updateCart}) {
@@ -43,10 +44,7 @@ function Home({productsData, productGroupsData, cartItems, updateCart}) {
           />
         )
       }
-      {/* <Cart
-        cartItems={cartItems}
-        updateCart={updateCart}
-      /> */}
+      <Footer />
     </div>
   );
 }

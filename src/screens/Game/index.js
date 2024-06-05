@@ -165,7 +165,12 @@ function Game() {
                                             )
                                         }
                                         <div className="clue">
-                                            <button className="clue__button">?</button>
+                                            <button 
+                                                className="clue__button"
+                                                onContextMenu={menuEvent => menuEvent.preventDefault()}
+                                            >
+                                                ?
+                                            </button>
                                             <p className="clue__content">
                                                 {
                                                     trivia[

@@ -1,6 +1,7 @@
 import "./style.css";
 import Button from "../Button";
 import { useState, useLayoutEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Tiles({items}) {
     const [numberOfTilesInRow, setNumberOfTilesInRow] = useState(3);
@@ -32,6 +33,8 @@ function Tiles({items}) {
 		return rows;
     };
 
+    const navigate = useNavigate();
+
     return (
         <section className="component-tiles">
             <div className="container">
@@ -54,7 +57,7 @@ function Tiles({items}) {
                                             {/* <button className="button">
                                                 Részletek
                                             </button> */}
-                                            <Button value="Részletek"/>
+                                            <Button value="Részletek" onClick={() => {navigate("/placeholder")}}/>
                                         </div>
                                     )
                                 }

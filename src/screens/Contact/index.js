@@ -13,7 +13,7 @@ function Contact() {
 
     return (
         <section className="screen-contact" style={{backgroundImage: "url(/img/contact-background.jpg)"}}>
-            <div className="container">
+            <div className="screen-contact__container">
                 <iframe 
                     className="contact__map"
                     // width="100%" 

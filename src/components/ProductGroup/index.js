@@ -1,11 +1,12 @@
 import "./style.scss";
 import { useState, useContext } from "react";
 import { AppContext } from "../../providers/AppProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function ProductGroup({ group, products, /*updateCart,*/ collapsedState = true}) {
     const [collapsed, setCollapse] = useState(collapsedState);
     const { updateCart } = useContext(AppContext);
+    const navigate = useNavigate();
 
     const getCollapsedClass = () => collapsed ? "collapsed" : "";
 
@@ -65,6 +66,10 @@ function ProductGroup({ group, products, /*updateCart,*/ collapsedState = true})
                                 <img 
                                     className="product-image" 
                                     src={product.imageUrl} 
+                                    onClick={() => {
+                                        navigate(`/products/${product.slug}`);
+                                        window.scroll(0, 0);
+                                    }}
                                 />
                                 <h5 className="product-cost">
                                     {Math.round(product.price * (1 - product.discount))} {product.currency + " "}

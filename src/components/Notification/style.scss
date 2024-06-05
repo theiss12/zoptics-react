@@ -1,0 +1,47 @@
+.component-notifications {
+    position: fixed;
+    z-index: 800;
+    top: 10px;
+    right: 10px;
+
+    &__item {
+        padding: 20px;
+        background-color: #333;
+        color: white;
+        margin: 0 0 20px;
+        position: relative;
+        box-shadow: 0 0 20px rgba(0,0,0,.5);
+
+        animation-name: notification-fadeout;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-delay: 2s;
+        
+        @keyframes notification-fadeout {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        .item {
+            &__close-button {
+                padding: 8px;
+                background: transparent;
+                color: white;
+                border: none;
+                display: block;
+                margin-left: auto;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+            }
+
+            &__message {
+                margin: 0;
+            }
+        }
+    }
+}

@@ -2,6 +2,7 @@ $component: 'product-group';
 
 .component-#{$component} {
     margin: 80px 0;
+    padding: 0 20px;
 
     .#{$component} {
         &-bar {
@@ -59,7 +60,8 @@ $component: 'product-group';
             justify-content: space-between;
             text-align: center;
             gap: 50px;
-            height: 461px;
+            // height: 461px;
+            height: 380px;
             padding: 36px 20px;
             transition: all 0.5s;
             overflow-y: hidden;
@@ -82,7 +84,8 @@ $component: 'product-group';
             }
 
             .#{$component}-product {
-                width: 250px;
+                // width: 250px;
+                width: 200px;
                 box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
                 border-radius: 10px;
                 padding: 36px 20px; //12px?
@@ -109,8 +112,11 @@ $component: 'product-group';
                 }
 
                 .product-image {
+                    --group-image-dimensions: 175px;
                     display: inline-flex;
-                    width: 100%;
+                    // width: 100%;
+                    width: var(--group-image-dimensions);
+                    height: var(--group-image-dimensions);
                     object-fit: contain;
                     border-radius: 50%;
                     transition: all .25s;
@@ -139,13 +145,21 @@ $component: 'product-group';
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 420px) {
     .component-#{$component} {
+        margin: 40px 0;
         .#{$component} {
+            &-bar {
+                h3 {
+                    margin: 10px 0;
+                }
+            }
             &-products {
+                // height: 320px;
+                gap: unset;
+                padding: 0;
                 .#{$component}-product {
-                    // box-sizing: border-box;
-                    // // width: 285px;
+                    scale: 0.75;
                 }
             }
         }

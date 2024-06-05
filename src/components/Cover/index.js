@@ -54,7 +54,7 @@ function Cover( {slides} ) {
                 className="slide-navigation-button previous"
                 onClick={ showPreviousSlide }
             >
-                <svg className="arrow" width="10" height="10">
+                {/* <svg className="arrow" width="10" height="10">
                     <defs>
                         <filter id="f3" width="120" height="120">
                             <feOffset in="SourceAlpha" dx="0" dy="1" />
@@ -64,13 +64,14 @@ function Cover( {slides} ) {
                     </defs>
                     <polygon points="0,5 10,0 10,10"
                         style={{ fill: "white" }} filter="url(#f3)" />
-                </svg>
+                </svg> */}
+                <span className="triangle"></span>
             </button>
             <button 
                 className="slide-navigation-button next"
                 onClick={ showNextSlide }
             >
-                <svg className="arrow" width="10" height="10">
+                {/* <svg className="arrow" width="10" height="10">
                     <defs>
                         <filter id="f3" width="120" height="120">
                             <feOffset in="SourceAlpha" dx="0" dy="1" />
@@ -80,7 +81,8 @@ function Cover( {slides} ) {
                     </defs>
                     <polygon points="10,5 0,0 0,10"
                         style={{ fill: "white" }} filter="url(#f3)" />
-                </svg>
+                </svg> */}
+                <span className="triangle"></span>
             </button>
             <ul className="slide-navigation-pagination">
                 {

@@ -5,7 +5,12 @@ function Teaser({article = {}, order, maxCharacters = 300}) {
     
     return (
         <article className={`component-teaser`} style={{animationDelay: (order / 2) + "s"}}>
-            <img src={`/img/${article.imageUrl}`} className="component-teaser__image"/>
+            {/* <img src={`/img/${article.imageUrl}`} className="component-teaser__image"/> */}
+            <div 
+                className="component-teaser__image"
+                style={{backgroundImage: `url(/img/${article.imageUrl})`}}
+            >
+            </div>
             <div className="component-teaser__information">
                 <h3 className="component-teaser__headline">{article.headline}</h3>
                 <p className="component-teaser__abstract">

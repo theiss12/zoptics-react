@@ -120,13 +120,20 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .component-summary {
         &__tables {
             display: initial;
 
             table {
                 margin: 24px auto;
+                font-size: 16px;
+            }
+        }
+
+        .checkout-payment {
+            &__title {
+                font-size: 32px;
             }
         }
     }
@@ -137,14 +144,8 @@
         &__tables {
     
             table {
-                font-size: 16px;
+                // font-size: 16px;
                 margin: 48px auto;
-            }
-        }
-
-        .checkout-payment {
-            &__title {
-                font-size: 32px;
             }
         }
     }

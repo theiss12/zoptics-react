@@ -124,7 +124,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .component-accounting {
         display: initial;
 
@@ -143,7 +143,7 @@
         &__input-group {
             padding: 0 0 24px;
             &--type {
-                padding: 24px;
+                padding: 16px;
 
                 .component-accounting {
                     &__input-description {
@@ -158,7 +158,7 @@
 
             .component-accounting {
                 &__input-description {
-                    margin:  0 0 24px;
+                    margin:  0 0 12px;
 
                     input {
                         max-width: unset;

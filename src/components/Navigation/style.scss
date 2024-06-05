@@ -1,7 +1,8 @@
 .component-navigation {
     text-align: left;
     background-color: var(--accentColor);
-    position: sticky;
+    // position: sticky;
+    position: relative;
     top: 0px;
     z-index: 100;
     transition: all .25s;
@@ -10,7 +11,7 @@
     &.game {
         background: transparent;
         backdrop-filter: blur(10px);
-        color: white;
+        // color: white;
         
     }
 
@@ -24,6 +25,7 @@
     display: flex;
     list-style-type: none;
     width: 100%;
+    padding: 0 0 0 20px;
 }
 
 .component-navigation-menu > li {
@@ -63,7 +65,7 @@
 .component-navigation-menu > li a {
     text-decoration: none;
     color: black;
-    font-size: 125%;
+    // font-size: 125%;
 }
 
 .component-navigation-menu .dropdown {
@@ -213,7 +215,7 @@
 
 //768 px tablet
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .component-navigation-menu li.cart:hover .dropdown {
         /*, .component-navigation-menu .dropdown:hover { */
         display: none;
@@ -286,7 +288,7 @@
 
                 &:focus-visible {
                     box-shadow: 0 0 20px white;
-                    width: 75%;
+                    width: unset;
                     outline: none;
                 }
             }

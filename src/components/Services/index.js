@@ -1,6 +1,9 @@
 import "./style.css"
+import { useNavigate } from "react-router-dom";
 
 function Services({ items }) {
+    const navigate = useNavigate();
+
     return (
         <section className="component-services">
             <div className="container">
@@ -18,7 +21,10 @@ function Services({ items }) {
                                     {item.description}
                                 </p>
 
-                                <button className="button">
+                                <button 
+                                    className="button"
+                                    onClick={() => {navigate("/placeholder")}}
+                                >
                                     Részletek
                                 </button>
                             </div>

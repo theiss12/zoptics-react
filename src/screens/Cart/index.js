@@ -9,6 +9,9 @@ function Cart() {
     return (
         <section className="screen-cart">
             <div className="container">
+                <h2 className="screen-cart__title">
+                    Kosár
+                </h2>
                 <CartItems />
                 {
                     cartItems.length > 0 &&

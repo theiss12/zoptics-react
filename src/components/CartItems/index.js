@@ -25,9 +25,6 @@ function CartItems() {
 
     return(
         <section className="component-cart">
-            <h2 className="title">
-                Kosár
-            </h2>
             <div className="cart-items">
                 {
                     cartItems.length === 0 ? 
