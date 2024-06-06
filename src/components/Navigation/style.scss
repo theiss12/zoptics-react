@@ -47,6 +47,21 @@
 
     a {
         display: flex;
+        align-items: center;
+
+        .total-quantity {
+            --total-quantity-dimensions: 25px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: var(--total-quantity-dimensions);
+            height: var(--total-quantity-dimensions);
+            margin: 0 8px 0 0;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
     }
 }
 
@@ -60,6 +75,10 @@
 
 .component-navigation-menu > li:hover a {
     color: grey;
+
+    .total-quantity {
+        border: 2px solid grey;
+    }
 }
 
 .component-navigation-menu > li a {
@@ -243,6 +262,10 @@
                     &.cart {
                         img {
                             filter: invert(100%);
+                        }
+
+                        .total-quantity {
+                            border: 2px solid white;
                         }
                     }
 

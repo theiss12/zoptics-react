@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import { setSessionCart, getSessionCart } from "../../services/session";
 import { getNewCart } from "../../services/cart";
+import { notify } from "../../services/global-state";
 
 export const AppContext = createContext();
 
@@ -12,6 +13,7 @@ const AppProvider = (props) => {
         const newCart = getNewCart(product, quantity);
         setCartItems(newCart);
         setSessionCart(newCart);
+        notify("A kosár tartalma megváltozott!");
     };
 
     return (

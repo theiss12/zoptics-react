@@ -1,23 +1,21 @@
 import "./style.scss";
 import { useEffect, useState } from "react";
+import { store, removeNotificationById } from "../../services/global-state";
 
-function Notifications({changable = [], defaultMessage = ""}) {
+function Notifications() {
+    const getStoreNotes = () => store.getState().notifications.items;
 
-    const [numItems, setNumItems] = useState(changable.length);
-    const [notifications, setNotifications] = useState([]);
+    const [notifications, setNotifications] = useState(getStoreNotes());
 
     useEffect(() => {
-        if (changable.length > numItems) {
-            const newId = notifications.length + 1;
-            const newNotifications = [...notifications, {id: newId}];
-            setNotifications(newNotifications);
-        }
-        setNumItems(changable.length);
-    }, [changable]);
+        store.subscribe(() => {
+            setNotifications(getStoreNotes());
+        });
+    }, []);
 
-    const deleteNotification = toDelete => {
-        const newNotifications = notifications.filter(notification => notification.id !== toDelete.id);
-        setNotifications(newNotifications);
+    const deleteNotification = event => {
+        const id = parseFloat(event.target.dataset.id);
+        store.dispatch(removeNotificationById(id));
     }
 
     return (
@@ -27,20 +25,18 @@ function Notifications({changable = [], defaultMessage = ""}) {
                     <div
                         key={notification.id}
                         className="component-notifications__item"
-                        onAnimationEnd={() => {
-                            deleteNotification(notification);
-                        }}
+                        onAnimationEnd={deleteNotification}
+                        data-id={notification.id}
                     >
                         <button
                             className="item__close-button"
-                            onClick={() => {
-                                deleteNotification(notification);
-                            }}
+                            data-id={notification.id}
+                            onClick={deleteNotification}
                         >
                             X
                         </button>
                         <p className="item__message">
-                            {defaultMessage}
+                            {notification.message}
                         </p>
                     </div>
                 )

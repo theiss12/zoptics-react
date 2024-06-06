@@ -10,7 +10,7 @@ function Article({ articles }) {
     const contentRef = useRef(null);
     useEffect(() => {
         window.scroll(0, 0);
-        fetch(`/api/articles/${slug}.json`)
+    fetch(`http://192.168.0.59:3200/articles/${slug}`/*`/api/articles/${slug}.json`*/)
             .then(response => response.json())
             .then(json => {
                 setArticleData(json.data);

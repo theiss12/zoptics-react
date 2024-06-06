@@ -8,17 +8,18 @@ function CartContent({formData, setFormData}) {
     const { cartItems, updateCart } = useContext(AppContext);
     const navigate = useNavigate();
 
-    // const getTotalPrice = () => {
-    //     return cartItems.reduce( (sum, cartItem) => {
-    //         return sum + (Math.round(cartItem.price * (1 - cartItem.discount))) * cartItem.quantity;
-    //     }, 0);
-    // };
-
     useEffect(() => {
+        setFormData(
+            {
+                ...formData, 
+                totalPrice: cartItems.reduce(
+                    (total, cartItem) => total + (Math.round(cartItem.price * (1 - cartItem.discount))) * cartItem.quantity, 0
+                )
+            }
+        );
         if (cartItems.length <= 0) {
             navigate("/");
         }
-        //console.log(getTotalPrice());
     }, [cartItems])
 
     return (
@@ -44,14 +45,6 @@ function CartContent({formData, setFormData}) {
                             className="cart-item__button"
                                 onClick={() => {
                                     updateCart(cartItem, 1);
-                                    setFormData(
-                                        {
-                                            ...formData, 
-                                            totalPrice: cartItems.reduce(
-                                                (total, cartItem) => total + (Math.round(cartItem.price * (1 - cartItem.discount))) * cartItem.quantity, 0
-                                            )
-                                        }
-                                    )
                                 }}
                             >
                                 +
